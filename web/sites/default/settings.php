@@ -114,7 +114,8 @@ $databases['default']['default'] = [
  */
 if ($database_url = getenv('DATABASE_URL')) {
   $connection = parse_url($database_url);
-  $databases['default']['default']['database'] = $connection['path'];
+
+  $databases['default']['default']['database'] = end(explode('/', $connection['path']));
   $databases['default']['default']['username'] = $connection['user'];
   $databases['default']['default']['password'] = $connection['pass'];
   $databases['default']['default']['host'] = $connection['host'];
