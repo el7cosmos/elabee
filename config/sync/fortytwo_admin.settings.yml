@@ -1,0 +1,27 @@
+fortytwo_admin_cleartype: 1
+fortytwo_admin_viewport: 1
+fortytwo_admin_viewport_initial_scale: '1.0'
+fortytwo_admin_viewport_user_scaleable: 1
+fortytwo_admin_viewport_minimum_scale: '1.0'
+fortytwo_admin_viewport_maximum_scale: '1.0'
+fortytwo_admin_placeholder_js: 1
+fortytwo_admin_enquire_js: 1
+fortytwo_admin_lodash_js: 1
+fortytwo_admin_show_window_size: 0
+fortytwo_admin_breadcrumb_home: 1
+fortytwo_admin_breadcrumb_trailing: 0
+fortytwo_admin_breadcrumb_title: 0
+fortytwo_admin_layout_login: 0
+fortytwo_admin_color_profile: beeblebrox
+_core:
+  default_config_hash: DrlXZ2YwaI5S74RXeMwA2bF1IOW1gZQFj-2ujtgGBTo
+features:
+  node_user_picture: false
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+logo:
+  use_default: 0
+  path: ''
+favicon:
+  use_default: 1

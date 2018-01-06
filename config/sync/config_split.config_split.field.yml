@@ -1,0 +1,17 @@
+uuid: 92231ed1-1e29-44de-97c2-1399b6ffb182
+langcode: en
+status: true
+dependencies: {  }
+id: field
+label: Field
+folder: ../config/field
+module:
+  file: 0
+  link: 0
+  text: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

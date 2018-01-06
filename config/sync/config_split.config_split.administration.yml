@@ -1,0 +1,18 @@
+uuid: a2d3aba8-ceba-4aaa-865a-178f68c64d0c
+langcode: en
+status: true
+dependencies: {  }
+id: administration
+label: Administration
+folder: ../config/administration
+module:
+  admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
+  admin_toolbar_tools: 0
+  fortytwo_admin_toolbar: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

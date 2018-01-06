@@ -1,0 +1,22 @@
+uuid: a5e63190-3e08-4bf3-90ef-09ae7ff389c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - fortytwo_admin
+_core:
+  default_config_hash: xcHqnX879U3nSuzIh6SVMMNDWpqFzAnvW8sesrhWa8Y
+id: fortytwo_admin_login
+theme: fortytwo_admin
+region: content
+weight: 10
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: 89656a52-a6ed-4122-ad36-090c55dc811a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - fortytwo_admin
+_core:
+  default_config_hash: C4fUAoxiw9L6zssn7FlQ5tir-BYIZDXhFFk8vBuSlgE
+id: fortytwo_admin_sitebranding
+theme: fortytwo_admin
+region: header
+weight: -3
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

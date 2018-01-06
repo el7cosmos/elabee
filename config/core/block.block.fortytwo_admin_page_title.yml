@@ -1,0 +1,20 @@
+uuid: 2432be77-c252-4318-9261-c37d429bdefd
+langcode: en
+status: true
+dependencies:
+  theme:
+    - fortytwo_admin
+_core:
+  default_config_hash: tPBi9d4P_norMWeUrT4Tp7Dgvvj0R59J0FSB-eWbkkw
+id: fortytwo_admin_page_title
+theme: fortytwo_admin
+region: header
+weight: -2
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

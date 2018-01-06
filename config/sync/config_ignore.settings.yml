@@ -1,0 +1,8 @@
+ignored_config_entities:
+  0: 'devel.*'
+  2: 'devel_codemirror.*'
+  4: 'field_ui.*'
+  6: system.menu.devel
+  8: 'update.*'
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

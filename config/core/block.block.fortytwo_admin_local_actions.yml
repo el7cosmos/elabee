@@ -1,0 +1,20 @@
+uuid: 9d84da7d-ce2f-4cf9-93e3-14a19eabba57
+langcode: en
+status: true
+dependencies:
+  theme:
+    - fortytwo_admin
+_core:
+  default_config_hash: E8T3TgIEjepcl5yhLjewYStI8B0Lb2UPeK1drzoyxWo
+id: fortytwo_admin_local_actions
+theme: fortytwo_admin
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

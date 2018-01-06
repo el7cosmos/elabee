@@ -1,0 +1,22 @@
+uuid: 7a79c32f-8c00-4b16-a466-b04baf6be8ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - fortytwo_admin
+_core:
+  default_config_hash: if5Q64f5xdQ6Ja_M15GoFeS7ndjfNXmMW1kZAsaFFUk
+id: fortytwo_admin_content
+theme: fortytwo_admin
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 958650b0-4031-4c0c-98b6-45980e2d1f5d
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: Local
+folder: ''
+module:
+  devel: 0
+  devel_codemirror: 0
+  field_ui: 0
+  kint: 0
+  update: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

@@ -1,0 +1,22 @@
+uuid: 6dfbf4aa-7cc0-4809-bb62-84e975697f99
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - fortytwo_admin
+_core:
+  default_config_hash: R7sFe7xc1-Ltk80tY4MaUm4kde4ZgbduiuGPmpMP9mM
+id: fortytwo_admin_messages
+theme: fortytwo_admin
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

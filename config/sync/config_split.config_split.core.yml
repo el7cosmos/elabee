@@ -1,0 +1,22 @@
+uuid: bef2ad62-3415-4e67-8631-5f6cd23f8c61
+langcode: en
+status: true
+dependencies: {  }
+id: core
+label: Core
+folder: ../config/core
+module:
+  block: 0
+  breakpoint: 0
+  dynamic_page_cache: 0
+  field: 0
+  filter: 0
+  node: 0
+  page_cache: 0
+  toolbar: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: -1
