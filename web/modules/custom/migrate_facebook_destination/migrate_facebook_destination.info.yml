@@ -1,0 +1,5 @@
+name: Migrate facebook destination
+type: module
+description: Provide facebook destination for migrate module
+core: 8.x
+package: Custom
