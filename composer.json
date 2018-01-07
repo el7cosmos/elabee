@@ -1,12 +1,13 @@
 {
-    "name": "drupal-composer/drupal-project",
+    "name": "el7cosmos/elabee",
     "description": "Project template for Drupal 8 projects with composer",
     "type": "project",
     "license": "GPL-2.0+",
     "authors": [
         {
-            "name": "",
-            "role": ""
+            "name": "Abi",
+            "email": "el@elabee.me",
+            "homepage": "http://elabee.me"
         }
     ],
     "repositories": [
