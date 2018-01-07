@@ -1,0 +1,3 @@
+[submodule "web/modules/custom/migrate_facebook_destination"]
+	path = web/modules/custom/migrate_facebook_destination
+	url = git@github.com:el7cosmos/migrate_facebook_destination.git
