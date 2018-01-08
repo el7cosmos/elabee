@@ -1,0 +1,6 @@
+services:
+  theme.negotiator.elabee:
+    class: Drupal\elabee\ElabeeNegotiator
+    arguments: ['@path.matcher']
+    tags:
+      - { name: theme_negotiator }
