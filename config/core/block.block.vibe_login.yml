@@ -1,0 +1,22 @@
+uuid: b9a7d948-fd25-4aeb-91d4-48aff1ed8384
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - vibe
+_core:
+  default_config_hash: 4QlSnWBcxxKMIFRM8sbu_MjSkcp3NjGgnVrc-lynQHI
+id: vibe_login
+theme: vibe
+region: sidebar_first
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }
