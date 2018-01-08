@@ -1,0 +1,10 @@
+name: Vibe
+type: theme
+description: Vibe
+package: Other
+core: 8.x
+libraries:
+  - vibe/global-styling
+  - vibe/nc
+ 
+base theme: false

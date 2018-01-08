@@ -1,0 +1,59 @@
+animation.star:
+  css:
+    theme:
+      assets/vendor/star-animation/star-animation.css: {}
+
+bootstrap:
+  version: 3.3.7
+  css:
+    theme:
+      assets/vendor/bootstrap/css/bootstrap.css: {}
+  js:
+    assets/vendor/bootstrap/js/tooltip.js: {}
+  dependencies:
+    - vibe/jquery
+
+global-styling:
+  css:
+    theme:
+      css/nc-grids.css: {}
+      css/main.css: {}
+      css/helper.css: {}
+      css/responsive.css: {}
+      css/themes/default.css: {}
+      css/custom.css: {}
+  dependencies:
+    - vibe/bootstrap
+
+jquery:
+  remote: https://github.com/jquery/jquery
+  version: 1.12.4
+  license:
+    name: MIT
+    url: https://github.com/jquery/jquery/blob/1.12.4/LICENSE.txt
+    gpl-compatible: true
+  js:
+    assets/vendor/jquery/jquery.min.js: { minified: true, weight: -20 }
+
+jquery.validation:
+  remote: https://github.com/jquery-validation/jquery-validation
+  version: 1.14.0
+  license:
+    name: MIT
+    url: https://github.com/jquery-validation/jquery-validation/blob/1.14.0/LICENSE.md
+    gpl-compatible: true
+  js:
+    assets/vendor/jquery-validation/jquery.validate.min.js: { minified: true }
+
+plugins:
+  js:
+    js/plugins.js: {}
+
+nc:
+  js:
+    js/nc.js: {}
+  dependencies:
+    - vibe/jquery
+    - vibe/bootstrap
+    - vibe/jquery.validation
+    - vibe/plugins
