@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab1a727b94e0694010d9621e534f162d",
+    "content-hash": "b66265cf4547fe728c9693d24e41501a",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1911,6 +1911,77 @@
             "time": "2018-01-03T19:27:53+00:00"
         },
         {
+            "name": "drupal/fontawesome",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/fontawesome",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "604613507a110dddc6a48b6df6d37c866df8fa1a"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1512142934",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel.Moberly",
+                    "homepage": "https://www.drupal.org/user/1160788"
+                },
+                {
+                    "name": "RobLoach",
+                    "homepage": "https://www.drupal.org/user/61114"
+                },
+                {
+                    "name": "cosmicdreams",
+                    "homepage": "https://www.drupal.org/user/42579"
+                },
+                {
+                    "name": "geerlingguy",
+                    "homepage": "https://www.drupal.org/user/389011"
+                },
+                {
+                    "name": "inders",
+                    "homepage": "https://www.drupal.org/user/127640"
+                },
+                {
+                    "name": "markcarver",
+                    "homepage": "https://www.drupal.org/user/501638"
+                },
+                {
+                    "name": "truls1502",
+                    "homepage": "https://www.drupal.org/user/325866"
+                }
+            ],
+            "description": "Iconic font designed for use with Twitter Bootstrap.",
+            "homepage": "https://www.drupal.org/project/fontawesome",
+            "support": {
+                "source": "http://cgit.drupalcode.org/fontawesome"
+            }
+        },
+        {
             "name": "drupal/fortytwo_admin",
             "version": "1.14.0",
             "source": {
@@ -2446,6 +2517,20 @@
                 "sdk"
             ],
             "time": "2017-08-16T17:28:07+00:00"
+        },
+        {
+            "name": "fortawesome/font-awesome",
+            "version": "v4.7.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/FortAwesome/Font-Awesome/archive/v4.7.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "fontawesome"
+            }
         },
         {
             "name": "gabordemooij/redbean",
@@ -5604,6 +5689,65 @@
             "time": "2017-03-18T10:28:49+00:00"
         },
         {
+            "name": "drupal/config_inspector",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/config_inspector",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_inspector-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "3ba3a31ea02323203ceae7ef7f80c091ced2e2f3"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1448357340",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Gábor Hojtsy",
+                    "homepage": "https://www.drupal.org/user/4166"
+                },
+                {
+                    "name": "Jose Reyero",
+                    "homepage": "https://www.drupal.org/user/4299"
+                },
+                {
+                    "name": "aspilicious",
+                    "homepage": "https://www.drupal.org/user/172527"
+                },
+                {
+                    "name": "vijaycs85",
+                    "homepage": "https://www.drupal.org/user/93488"
+                }
+            ],
+            "description": "Provides a configuration data and structure inspector tool.",
+            "homepage": "https://www.drupal.org/project/config_inspector",
+            "support": {
+                "source": "http://cgit.drupalcode.org/config_inspector"
+            }
+        },
+        {
             "name": "drupal/devel",
             "version": "1.2.0",
             "source": {
@@ -6957,8 +7101,12 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
+        "drupal/migrate_plus": 10,
+        "drupal/migrate_tools": 10,
+        "drush/drush": 10,
+        "drupal/config_inspector": 10,
         "drupal/examples": 20
     },
     "prefer-stable": true,
