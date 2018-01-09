@@ -819,6 +819,7 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
 
+$settings['php_storage']['twig']['directory'] = '../storage/php';
 $settings['s3fs.use_s3_for_public'] = (bool) getenv('S3_PUBLIC');
 $config['s3fs.settings']['access_key'] = getenv('AWS_ACCESS_KEY_ID');
 $config['s3fs.settings']['secret_key'] = getenv('AWS_SECRET_ACCESS_KEY');
