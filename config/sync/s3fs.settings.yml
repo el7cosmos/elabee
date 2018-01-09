@@ -13,7 +13,7 @@ encryption: ''
 use_https: true
 ignore_cache: false
 redirect_styles_ttl: null
-no_rewrite_cssjs: true
+no_rewrite_cssjs: false
 root_folder: ''
 public_folder: public
 private_folder: private
