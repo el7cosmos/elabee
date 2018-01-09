@@ -8,7 +8,7 @@ use_cname: false
 use_customhost: true
 hostname: nyc3.digitaloceanspaces.com
 domain: ''
-cache_control_header: ''
+cache_control_header: 'public, max-age=86400'
 encryption: ''
 use_https: true
 ignore_cache: false
