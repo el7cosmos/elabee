@@ -1,4 +1,9 @@
 services:
+  elabee.event_subscriber:
+    class: Drupal\elabee\EventSubscriber\ElabeeEventSubscriber
+    arguments: []
+    tags:
+      - { name: event_subscriber }
   theme.negotiator.elabee:
     class: Drupal\elabee\ElabeeNegotiator
     arguments: ['@path.matcher']
