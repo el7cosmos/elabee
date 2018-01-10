@@ -405,7 +405,7 @@ $settings['update_free_access'] = FALSE;
  * Be aware, however, that it is likely that this would allow IP
  * address spoofing unless more advanced precautions are taken.
  */
-# $settings['reverse_proxy'] = TRUE;
+$settings['reverse_proxy'] = TRUE;
 
 /**
  * Specify every reverse proxy IP address in your environment.
@@ -423,7 +423,7 @@ $settings['update_free_access'] = FALSE;
  * Set this value if your proxy server sends the client protocol in a header
  * other than X-Forwarded-Proto.
  */
-# $settings['reverse_proxy_proto_header'] = 'X_FORWARDED_PROTO';
+$settings['reverse_proxy_proto_header'] = 'X_FORWARDED_PROTO';
 
 /**
  * Set this value if your proxy server sends the client protocol in a header
