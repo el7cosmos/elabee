@@ -412,6 +412,7 @@ $settings['reverse_proxy'] = TRUE;
  * This setting is required if $settings['reverse_proxy'] is TRUE.
  */
 # $settings['reverse_proxy_addresses'] = array('a.b.c.d', ...);
+$settings['reverse_proxy_addresses'][] = getenv('REMOTE_ADDR');
 
 /**
  * Set this value if your proxy server sends the client IP in a header
@@ -423,7 +424,7 @@ $settings['reverse_proxy'] = TRUE;
  * Set this value if your proxy server sends the client protocol in a header
  * other than X-Forwarded-Proto.
  */
-$settings['reverse_proxy_proto_header'] = 'X_FORWARDED_PROTO';
+# $settings['reverse_proxy_proto_header'] = 'X_FORWARDED_PROTO';
 
 /**
  * Set this value if your proxy server sends the client protocol in a header
