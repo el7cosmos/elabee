@@ -7,10 +7,8 @@ label: Local
 folder: ''
 module:
   config_inspector: 0
-  devel: 0
   devel_codemirror: 0
   field_ui: 0
-  kint: 0
   update: 0
 theme: {  }
 blacklist:

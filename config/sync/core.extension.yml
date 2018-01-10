@@ -4,8 +4,10 @@ module:
   config_ignore: 0
   config_split: 0
   dblog: 0
+  devel: 0
   elabee: 0
   fontawesome: 0
+  kint: 0
   migrate: 0
   migrate_facebook_destination: 0
   migrate_plus: 0
