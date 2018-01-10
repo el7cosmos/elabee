@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Contains s3fs_asset_dumper.module.
+ */
+
+/**
+ * Implements hook_s3fs_upload_params_alter.
+ */
+function s3fs_asset_dumper_s3fs_upload_params_alter(array &$upload_params, array &$context) {
+  if (extension_loaded('zlib') && \Drupal::config('system.performance')->get('css.gzip')) {
+    if (preg_match("/^.*\.css$/", $context['Key'])) {
+      $upload_params['CacheControl'] = 'public, max-age=31536000';
+      $upload_params['ContentEncoding'] = 'gzip';
+    }
+  }
+
+  if (extension_loaded('zlib') && \Drupal::config('system.performance')->get('js.gzip')) {
+    if (preg_match("/^.*\.css$/", $context['Key'])) {
+      $upload_params['CacheControl'] = 'private, max-age=31536000';
+      $upload_params['ContentEncoding'] = 'gzip';
+    }
+  }
+}
