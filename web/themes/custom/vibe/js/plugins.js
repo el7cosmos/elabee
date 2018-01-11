@@ -12,39 +12,14 @@
 - jQuery Countdown plugin v1.0
 *******************************************/
 
-
-/* CSS Browser Selector
-********************************************/
-/*
- CSS Browser Selector js v0.5.3 (July 2, 2013)
-
- -- original --
- Rafael Lima (http://rafael.adm.br)
- http://rafael.adm.br/css_browser_selector
- License: http://choosealicense.com/licenses/mit/
- Contributors: http://rafael.adm.br/css_browser_selector#contributors
- -- /original --
-
- Fork project: http://code.google.com/p/css-browser-selector/
- Song Hyo-Jin (shj at xenosi.de)
- */
-function css_browser_selector(e){var r=e.toLowerCase(),i=function(e){return r.indexOf(e)>-1},t="gecko",o="webkit",a="safari",n="chrome",s="opera",d="mobile",c=0,l=window.devicePixelRatio?(window.devicePixelRatio+"").replace(".","_"):"1",w=[!/opera|webtv/.test(r)&&/msie\s(\d+)/.test(r)&&(c=1*RegExp.$1)?"ie ie"+c+(6==c||7==c?" ie67 ie678 ie6789":8==c?" ie678 ie6789":9==c?" ie6789 ie9m":c>9?" ie9m":""):/trident\/\d+.*?;\s*rv:(\d+)\.(\d+)\)/.test(r)&&(c=[RegExp.$1,RegExp.$2])?"ie ie"+c[0]+" ie"+c[0]+"_"+c[1]+" ie9m":/firefox\/(\d+)\.(\d+)/.test(r)&&(re=RegExp)?t+" ff ff"+re.$1+" ff"+re.$1+"_"+re.$2:i("gecko/")?t:i(s)?s+(/version\/(\d+)/.test(r)?" "+s+RegExp.$1:/opera(\s|\/)(\d+)/.test(r)?" "+s+RegExp.$2:""):i("konqueror")?"konqueror":i("blackberry")?d+" blackberry":i(n)||i("crios")?o+" "+n:i("iron")?o+" iron":!i("cpu os")&&i("applewebkit/")?o+" "+a:i("mozilla/")?t:"",i("android")?d+" android":"",i("tablet")?"tablet":"",i("j2me")?d+" j2me":i("ipad; u; cpu os")?d+" chrome android tablet":i("ipad;u;cpu os")?d+" chromedef android tablet":i("iphone")?d+" ios iphone":i("ipod")?d+" ios ipod":i("ipad")?d+" ios ipad tablet":i("mac")?"mac":i("darwin")?"mac":i("webtv")?"webtv":i("win")?"win"+(i("windows nt 6.0")?" vista":""):i("freebsd")?"freebsd":i("x11")||i("linux")?"linux":"","1"!=l?" retina ratio"+l:"","js portrait"].join(" ");return window.jQuery&&!window.jQuery.browser&&(window.jQuery.browser=c?{msie:1,version:c}:{}),w}!function(e,r){var i=css_browser_selector(navigator.userAgent),t=e.documentElement;t.className+=" "+i;var o=i.replace(/^\s*|\s*$/g,"").split(/ +/);r.CSSBS=1;for(var a=0;a<o.length;a++)r["CSSBS_"+o[a]]=1;var n=function(r){return e.documentElement[r]||e.body[r]};r.jQuery&&!function(e){function i(){if(0==m){try{var e=n("clientWidth"),r=n("clientHeight");if(e>r?u.removeClass(a).addClass(s):u.removeClass(s).addClass(a),e==b)return;b=e}catch(i){}m=setTimeout(o,100)}}function o(){try{u.removeClass(p),u.addClass(360>=b?d:640>=b?c:768>=b?l:1024>=b?w:"pc")}catch(e){}m=0}var a="portrait",s="landscape",d="smartnarrow",c="smartwide",l="tabletnarrow",w="tabletwide",p=d+" "+c+" "+l+" "+w+" pc",u=e(t),m=0,b=0;r.CSSBS_ie?setInterval(i,1e3):e(r).on("resize orientationchange",i).trigger("resize"),e(r).load(i)}(r.jQuery)}(document,window);
-function rgenNotice(){
-	var a = location.host,
-		b = "rgenesis",
-		c = '%cDEMO ONLY NOTICE\n++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\nAUTHOR : R_GENESIS\n\nPROJECT : LeadPack - Multi-Purpose Landing Page Templates\n\nThis file licensed to R_GENESIS - http://themeforest.net/user/r_genesis and it is strictly prohibited to copy or reuse it.\n\nCopyright 2015-2017 R.Genesis.Art\n\nPurchase : #\n\n++++++++++++++++++++++++++++++++++++++++++++++++++++++';
-	if (!a.includes(b)) {console.log(c,'font-size: 16px; color: #f00;'); $('html').html(''); return false; } else { return true; }
-	
-}
-
 /* loading script
 ********************************************/
 function jfload(u, c) {
 	'use strict';
 	var fgroupDeclared = true;
-	try{ 
+	try{
 		fgroup;
-		var h = document.getElementsByTagName('head')[0], 
+		var h = document.getElementsByTagName('head')[0],
 			s = document.createElement('script');
 		s.async = true; s.src = u;
 		s.onload = s.onreadystatechange = function () {
@@ -66,7 +41,7 @@ function gfont(){
 	var fgroupDeclared = true,
 		flist = '';
 
-	try{ 
+	try{
 		fgroup;
 		flist = fgroup;
 	} catch(e) {
@@ -128,7 +103,7 @@ jfload('//ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js', gfont);
 
 /* Core
 ********************************************/
-/* Pre-Define HTML5 Elements in IE */ 
+/* Pre-Define HTML5 Elements in IE */
 (function(){ var els = "source|address|article|aside|audio|canvas|command|datalist|details|dialog|figure|figcaption|footer|header|hgroup|mark|meter|menu|nav|picture|progress|ruby|section|time|video".split('|'); for(var i = 0; i < els.length; i++) { document.createElement(els[i]); } } )();
 
 
@@ -192,17 +167,17 @@ https://github.com/t4t5/sweetalert
  * http://www.littlewebthings.com/projects/countdown/
  *
  * Copyright 2010, Vassilis Dourdounis
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -220,7 +195,7 @@ https://github.com/t4t5/sweetalert
 		$.extend(config, options);
 
 		diffSecs = this.setCountDown(config);
-	
+
 		if (config.onComplete)
 		{
 			$.data($(this)[0], 'callback', config.onComplete);
@@ -290,7 +265,7 @@ https://github.com/t4t5/sweetalert
 			days = Math.floor(diffSecs/60/60/24);
 			weeks = Math.floor(diffSecs/60/60/24/7);
 		}
-		else 
+		else
 		{
 			days = Math.floor(diffSecs/60/60/24)%7;
 			weeks = Math.floor(diffSecs/60/60/24/7);
@@ -308,8 +283,8 @@ https://github.com/t4t5/sweetalert
 			e = $this;
 			t = setTimeout(function() { e.doCountDown(id, diffSecs-1) } , 1000);
 			$.data(e[0], 'timer', t);
-		} 
-		else if (cb = $.data($this[0], 'callback')) 
+		}
+		else if (cb = $.data($this[0], 'callback'))
 		{
 			$.data($this[0], 'callback')();
 		}
@@ -318,7 +293,7 @@ https://github.com/t4t5/sweetalert
 
 	$.fn.dashChangeTo = function(id, dash, n, duration) {
 		  $this = $('#' + id);
-		 
+
 		  for (var i=($this.find('.' + dash + ' .digit').length-1); i>=0; i--)
 		  {
 				var d = n%10;
@@ -361,7 +336,7 @@ https://github.com/t4t5/sweetalert
 /*!
  * classie - class helper functions
  * from bonzo https://github.com/ded/bonzo
- * 
+ *
  * classie.has( elem, 'my-class' ) -> true/false
  * classie.add( elem, 'my-new-class' )
  * classie.remove( elem, 'my-unwanted-class' )
@@ -449,7 +424,7 @@ if ( typeof define === 'function' && define.amd ) {
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
@@ -462,7 +437,7 @@ var ModalEffects = (function() {
 		[].slice.call( document.querySelectorAll( '.nc-trigger' ) ).forEach( function( el, i ) {
 
 			// document.addEventListener('DOMContentLoaded',function(){
-			  
+
 			// });
 
 			var modal = document.querySelector( '#' + el.getAttribute( 'data-popup' ) );
@@ -477,7 +452,7 @@ var ModalEffects = (function() {
 			}
 
 			function removeModalHandler() {
-				removeModal( classie.has( el, 'nc-setperspective' ) ); 
+				removeModal( classie.has( el, 'nc-setperspective' ) );
 			}
 
 			el.addEventListener( 'click', function( ev ) {
@@ -505,7 +480,7 @@ var ModalEffects = (function() {
 						$(".nc-map").css("height", "1px");
 						$(".gmap-widget").css("height", "1px");
 					}
-					
+
 					ev.stopPropagation();
 					removeModalHandler();
 				});
@@ -517,7 +492,7 @@ var ModalEffects = (function() {
 			// 		$(".nc-map").css("height", "1px");
 			// 		$(".gmap-widget").css("height", "1px");
 			// 	}
-				
+
 			// 	ev.stopPropagation();
 			// 	removeModalHandler();
 			// });
