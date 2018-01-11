@@ -1,8 +1,4 @@
 module:
-  advagg: 0
-  advagg_css_minify: 0
-  advagg_js_minify: 0
-  advagg_mod: 0
   config: 0
   config_filter: 0
   config_split: 0
