@@ -24,7 +24,7 @@ class ElabeeEventSubscriber implements EventSubscriberInterface {
   public function filterResponse(FilterResponseEvent $event) {
     $reponse = $event->getResponse();
     if ($reponse instanceof HtmlResponse) {
-      $reponse->headers->set('Content-Security-Policy', "script-src 'self'; object-src 'self'");
+      $reponse->headers->set('Content-Security-Policy', "script-src 'self' https://elabee.nyc3.digitaloceanspaces.com; object-src 'self'");
       $reponse->headers->set('X-Frame-Options', 'DENY');
       $reponse->headers->set('X-XSS-Protection', '1; mode=block');
     }
