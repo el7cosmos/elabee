@@ -1,9 +1,0 @@
-toolbar_items:
-  - devel.container_info.service
-  - devel.elements_page
-  - devel.entity_info_page
-  - devel.event_info
-  - devel.execute_php
-  - devel.route_info
-_core:
-  default_config_hash: ysHEvvazIuaJ5BdY0dUw2_my_Q5hM8ypdXwFfaIrvMw
