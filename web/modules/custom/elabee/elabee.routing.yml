@@ -1,0 +1,7 @@
+elabee.front_controller_front:
+  path: 'front'
+  defaults:
+    _controller: '\Drupal\elabee\Controller\FrontController::front'
+    _title: 'eL Abee'
+  requirements:
+    _permission: 'access content'
