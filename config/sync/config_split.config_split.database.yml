@@ -1,0 +1,15 @@
+uuid: abfc473b-2779-4562-871b-a5886f20804a
+langcode: en
+status: true
+dependencies: {  }
+id: database
+label: Database
+folder: ''
+module: {  }
+theme: {  }
+blacklist:
+  - vibe.settings
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
