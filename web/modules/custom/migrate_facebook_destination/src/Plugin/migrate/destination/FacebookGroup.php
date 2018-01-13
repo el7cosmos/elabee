@@ -40,6 +40,7 @@ class FacebookGroup extends FacebookBase {
   public function import(Row $row, array $old_destination_id_values = []) {
     try {
       $response = $this->facebook->post("/{$this->configuration['facebook']['group_id']}/feed", [
+        'message' => $row->getDestinationProperty('message'),
         'link' => $row->getDestinationProperty('link'),
       ]);
 
