@@ -848,7 +848,7 @@ if ($redis_url = getenv('REDIS_URL')) {
     $settings['redis.connection']['port'] = $redis_connection['port'];
   }
   if (!empty($redis_connection['pass'])) {
-    $settings['redis.connection']['password'] = $redis_connection['password'];
+    $settings['redis.connection']['password'] = $redis_connection['pass'];
   }
   if (!empty(getenv('REDIS_BASE'))) {
     $settings['redis.connection']['base'] = getenv('REDIS_BASE');
