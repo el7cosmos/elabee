@@ -1,0 +1,9 @@
+migrate_facebook_destination.settings:
+  path: 'admin/config/services/facebook'
+  defaults:
+    _form: '\Drupal\migrate_facebook_destination\Form\FacebookSettingsForm'
+    _title: 'FacebookSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE

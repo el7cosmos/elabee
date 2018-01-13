@@ -1,0 +1,14 @@
+migrate_facebook_destination.settings:
+  type: config_object
+  label: 'Facebook settings'
+  mapping:
+    app_id:
+      type: string
+      label: 'Application ID'
+    app_secret:
+      type: string
+      label: 'Application secret'
+    default_access_token:
+      type: string
+      label: 'Default access token'
+      nullable: true

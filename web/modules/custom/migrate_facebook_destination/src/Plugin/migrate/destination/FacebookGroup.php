@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Drupal\migrate_facebook_destination\Plugin\migrate\destination;
 
 use Drupal\migrate\Plugin\MigrationInterface;
@@ -8,7 +7,7 @@ use Drupal\migrate\Row;
 use Facebook\Exceptions\FacebookSDKException;
 
 /**
- * Class FacebookGroup
+ * Class FacebookGroup.
  *
  * @package Drupal\migrate_facebook_destination\Plugin\migrate\destination
  *
@@ -19,6 +18,8 @@ use Facebook\Exceptions\FacebookSDKException;
 class FacebookGroup extends FacebookBase {
 
   /**
+   * Indicates whether the destination can be rolled back.
+   *
    * @var bool
    */
   protected $supportsRollback = TRUE;
