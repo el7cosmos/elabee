@@ -34,6 +34,7 @@
     "require": {
         "php": "~7.1.0",
         "ext-gd": "*",
+        "ext-redis": "*",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.2",
@@ -46,6 +47,7 @@
         "drupal/fortytwo_admin_toolbar": "^1.6",
         "drupal/migrate_plus": "^4.0@beta",
         "drupal/migrate_tools": "^4.0@beta",
+        "drupal/redis": "^1.0@rc",
         "drupal/s3fs": "^3.0@alpha",
         "drush/drush": "~8.0|^9.0.0-beta8",
         "facebook/graph-sdk": "^5.6",
