@@ -822,8 +822,36 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
 
+/**
+ * S3 File System.
+ */
 $settings['php_storage']['twig']['directory'] = '../storage/php';
 $settings['s3fs.use_s3_for_public'] = (bool) getenv('S3_PUBLIC');
 $config['s3fs.settings']['access_key'] = getenv('AWS_ACCESS_KEY_ID');
 $config['s3fs.settings']['secret_key'] = getenv('AWS_SECRET_ACCESS_KEY');
 $config['s3fs.settings']['region'] = 'nyc3';
+
+/**
+ * Redis
+ */
+if ($redis_url = getenv('REDIS_URL')) {
+  $redis_connection = parse_url($redis_url);
+
+  $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/redis.services.yml';
+  $settings['cache']['default'] = 'cache.backend.redis';
+
+  $settings['redis.connection']['interface'] = 'PhpRedis';
+  if (!empty($redis_connection['host'])) {
+    $settings['redis.connection']['host'] = $redis_connection['host'];
+  }
+  if (!empty($redis_connection['port'])) {
+    $settings['redis.connection']['port'] = $redis_connection['port'];
+  }
+  if (!empty($redis_connection['pass'])) {
+    $settings['redis.connection']['password'] = $redis_connection['password'];
+  }
+  if (!empty(getenv('REDIS_BASE'))) {
+    $settings['redis.connection']['base'] = getenv('REDIS_BASE');
+  }
+  $settings['cache_prefix'] = 'elabee';
+}
