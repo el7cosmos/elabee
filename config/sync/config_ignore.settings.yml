@@ -1,4 +1,5 @@
 ignored_config_entities:
-  - vibe.settings
+  0: migrate_facebook_destination.settings
+  2: vibe.settings
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

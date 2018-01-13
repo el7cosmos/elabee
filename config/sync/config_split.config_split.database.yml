@@ -5,7 +5,8 @@ dependencies: {  }
 id: database
 label: Database
 folder: ''
-module: {  }
+module:
+  migrate_facebook_destination: 0
 theme: {  }
 blacklist:
   - vibe.settings

@@ -7,7 +7,6 @@ module:
   elabee: 0
   fontawesome: 0
   migrate: 0
-  migrate_facebook_destination: 0
   migrate_plus: 0
   migrate_tools: 0
   s3fs: 0
