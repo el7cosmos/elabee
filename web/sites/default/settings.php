@@ -855,3 +855,8 @@ if ($redis_url = getenv('REDIS_URL')) {
   }
   $settings['cache_prefix'] = 'elabee';
 }
+
+/**
+ * Monolog.
+ */
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/monolog.services.yml';

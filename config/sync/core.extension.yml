@@ -9,6 +9,7 @@ module:
   migrate: 0
   migrate_plus: 0
   migrate_tools: 0
+  monolog: 0
   redis: 0
   s3fs: 0
   s3fs_asset_dumper: 0

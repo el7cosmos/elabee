@@ -1,0 +1,11 @@
+parameters:
+  monolog.channel_handlers:
+    default: ['dblog']
+    cron: ['null']
+    php: ['error_log']
+    page not found: ['null']
+
+services:
+  monolog.handler.dblog:
+    class: Drupal\monolog\Logger\Handler\DrupalHandler
+    arguments: ['@logger.dblog']
