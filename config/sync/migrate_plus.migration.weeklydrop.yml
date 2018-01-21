@@ -1,0 +1,52 @@
+uuid: 82437201-5822-4b1b-b299-3cb6fbffdaa8
+langcode: en
+status: true
+dependencies: {  }
+id: weeklydrop
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: default
+label: WeeklyDrop
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  headers: {  }
+  urls: 'http://www.theweeklydrop.com/rss/BHRtdBvCVrXagby'
+  data_parser_plugin: simple_xml
+  item_selector: /rss/channel/item
+  fields:
+    -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: link
+      label: 'Origin link'
+      selector: link
+    -
+      name: description
+      label: Description
+      selector: description
+    -
+      name: pub_date
+      label: 'Publication date'
+      selector: pubDate
+    -
+      name: guid
+      label: GUID
+      selector: guid
+  ids:
+    guid:
+      type: string
+process:
+  message:
+    plugin: default_value
+    default_value: '#Autopost via d8 Migrate API'
+  link: link
+destination:
+  plugin: 'facebook:group'
+  facebook:
+    group_id: 16567907438
+migration_dependencies: null
