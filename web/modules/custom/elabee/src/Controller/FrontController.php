@@ -12,7 +12,7 @@ class FrontController extends ControllerBase {
   /**
    * Front.
    */
-  public function front() {
+  public function front(): array {
     return [];
   }
 
