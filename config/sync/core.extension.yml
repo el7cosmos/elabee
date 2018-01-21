@@ -12,7 +12,7 @@ module:
   monolog: 0
   redis: 0
   s3fs: 0
-  s3fs_asset_dumper: 0
+  s3fs_asset: 0
   system: 0
   user: 0
   minimal: 1000

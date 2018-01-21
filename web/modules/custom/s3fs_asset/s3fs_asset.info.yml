@@ -1,0 +1,5 @@
+name: S3 File System Asset
+type: module
+description: S3 File System Asset
+core: 8.x
+package: Other

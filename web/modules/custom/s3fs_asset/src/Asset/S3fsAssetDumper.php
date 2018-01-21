@@ -1,13 +1,32 @@
 <?php
 
-namespace Drupal\s3fs_asset_dumper\Asset;
+namespace Drupal\s3fs_asset\Asset;
 
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Asset\AssetDumper;
+use Drupal\Core\Config\ConfigFactoryInterface;
 
 class S3fsAssetDumper extends AssetDumper {
 
-  public function dump($data, $file_extension) {
+  /**
+   * @var \Drupal\Core\Config\ImmutableConfig
+   */
+  protected $config;
+
+  /**
+   * Constructs a S3fsAssetDumper object.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory service.
+   */
+  public function __construct(ConfigFactoryInterface $config_factory) {
+    $this->config = $config_factory->get('s3fs.settings');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function dump($data, $file_extension): string {
     // Prefix filename to prevent blocking by firewalls which reject files
     // starting with "ad*".
     $filename = $file_extension . '_' . Crypt::hashBase64($data) . '.' . $file_extension;
@@ -34,4 +53,5 @@ class S3fsAssetDumper extends AssetDumper {
     }
     return $uri;
   }
+
 }

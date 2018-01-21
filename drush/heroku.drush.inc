@@ -18,4 +18,5 @@ function heroku_drush_command() {
 function drush_heroku_release() {
   drush_config_import();
   drush_cache_rebuild();
+  drush_s3fs_refresh_cache();
 }

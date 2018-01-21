@@ -1,0 +1,14 @@
+{
+  "name": "drupal/s3fs_asset",
+  "type": "drupal-module",
+  "description": "S3 File System Asset",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/s3fs_asset",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/s3fs_asset",
+    "source": "http://cgit.drupalcode.org/s3fs_asset"
+  },
+  "require": { }
+}

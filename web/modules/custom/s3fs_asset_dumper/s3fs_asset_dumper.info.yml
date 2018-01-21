@@ -1,5 +1,0 @@
-name: S3 File System Asset Dumper
-type: module
-description: S3 File System Asset Dumper
-core: 8.x
-package: Other
