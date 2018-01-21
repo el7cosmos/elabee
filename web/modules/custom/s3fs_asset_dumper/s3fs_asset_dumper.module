@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains s3fs_asset_dumper.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function s3fs_asset_dumper_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the s3fs_asset_dumper module.
+    case 'help.page.s3fs_asset_dumper':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
