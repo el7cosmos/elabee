@@ -1,0 +1,22 @@
+{
+    "name": "el7cosmos/elabee-module",
+    "description": "This extension provides new commands for Drush.",
+    "type": "drupal-custom-module",
+    "authors": [
+        {
+            "name": "Abi",
+            "email": "el@elabee.me",
+            "homepage": "http://elabee.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^9"
+            }
+        }
+    }
+}

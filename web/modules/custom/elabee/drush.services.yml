@@ -1,0 +1,6 @@
+services:
+  elabee.commands:
+    class: \Drupal\elabee\Commands\ElabeeCommands
+    arguments: ['@config.factory', '@s3fs']
+    tags:
+      - { name: drush.command }
