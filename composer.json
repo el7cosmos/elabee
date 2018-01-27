@@ -59,6 +59,7 @@
     "require-dev": {
         "behat/mink": "~1.7",
         "behat/mink-goutte-driver": "~1.2",
+        "composer/composer": "^1.6",
         "drupal/coder": "^8.2",
         "drupal/config_inspector": "^1.0@beta",
         "drupal/devel": "^1.2",
@@ -79,7 +80,8 @@
     },
     "autoload": {
         "classmap": [
-            "scripts/composer/ScriptHandler.php"
+            "scripts/composer/ScriptHandler.php",
+            "scripts/composer/Heroku.php"
         ]
     },
     "scripts": {
@@ -92,6 +94,7 @@
         ],
         "post-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\composer\\Heroku::pgPassFile",
             "if [ \"$COMPOSER_DEV_MODE\" = \"1\" ]; then security-checker security:check; fi"
         ],
         "post-update-cmd": [
