@@ -5,3 +5,11 @@ elabee.front_controller_front:
     _title: 'eL Abee'
   requirements:
     _permission: 'access content'
+
+elabee.incoming_mail:
+  path: 'mail/weeklydrop'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\elabee\Controller\IncomingMail::weeklydrop'
+  requirements:
+    _permission: 'access content'
