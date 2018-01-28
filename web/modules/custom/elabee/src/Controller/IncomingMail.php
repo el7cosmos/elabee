@@ -69,7 +69,7 @@ class IncomingMail extends ControllerBase {
       ],
     ];
     $client = new Raven_Client($options);
-    $client->captureMessage(__METHOD__);
+    $client->captureMessage(__METHOD__, [], ['level' => Raven_Client::DEBUG]);
 
     return new JsonResponse([]);
   }
