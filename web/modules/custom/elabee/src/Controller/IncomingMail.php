@@ -3,6 +3,7 @@
 namespace Drupal\elabee\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Session\AccountProxyInterface;
 use Mailgun\Mailgun;
 use Raven_Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -26,12 +27,18 @@ class IncomingMail extends ControllerBase {
   protected $request;
 
   /**
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $user;
+
+  /**
    * Constructs the controller object.
    *
    * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
    * @param $environment
    */
-  public function __construct(RequestStack $request_stack, $environment) {
+  public function __construct(AccountProxyInterface $account_proxy, RequestStack $request_stack, $environment) {
+    $this->user = $account_proxy->getAccount();
     $this->environment = $environment;
     $this->request = $request_stack->getCurrentRequest();
   }
@@ -41,6 +48,7 @@ class IncomingMail extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
+      $container->get('current_user'),
       $container->get('request_stack'),
       $container->getParameter('kernel.environment')
     );
@@ -62,13 +70,20 @@ class IncomingMail extends ControllerBase {
       'curl_method' => 'async',
       'dsn' => getenv('SENTRY_DSN'),
       'environment' => $this->environment,
+      'name' => $this->config('system.site')->get('name'),
       'processorOptions' => [
         'Raven_SanitizeDataProcessor' => [
           'fields_re' => '/(SESS|pass|authorization|password|passwd|secret|password_confirmation|card_number|auth_pw)/i',
         ],
       ],
+      'site' => $this->request->getHost(),
     ];
     $client = new Raven_Client($options);
+    $client->user_context([
+      'id' => $this->user->id(),
+      'ip_address' => $this->request->getClientIp(),
+      'name' => $this->user->getAccountName(),
+    ]);
     $client->captureMessage(__METHOD__, [], ['level' => Raven_Client::DEBUG]);
 
     return new JsonResponse([]);
