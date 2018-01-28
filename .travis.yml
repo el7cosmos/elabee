@@ -8,9 +8,11 @@ before_install:
 
 install:
   - composer install --ignore-platform-reqs --no-suggest
+  - export COMPOSER_BIN_DIR=$TRAVIS_BUILD_DIR/vendor/bin
+  - export PATH=$COMPOSER_BIN_DIR:$PATH
 
 script:
-  - security-checker security:check
+  - security-checker security:check --end-point=http://security.sensiolabs.org/check_lock
 
 cache:
   directories:
