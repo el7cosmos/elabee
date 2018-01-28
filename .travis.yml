@@ -4,10 +4,10 @@ php:
 
 before_install:
   - phpenv config-rm xdebug.ini
+  - composer validate
 
 install:
-  - composer validate
-  - composer install
+  - composer install --ignore-platform-reqs
 
 cache:
   directories:
