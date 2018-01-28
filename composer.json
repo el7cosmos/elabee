@@ -96,12 +96,10 @@
         ],
         "post-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "DrupalProject\\composer\\Heroku::pgPassFile",
-            "if [ \"$COMPOSER_DEV_MODE\" = \"1\" ]; then security-checker security:check; fi"
+            "DrupalProject\\composer\\Heroku::pgPassFile"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "if [ \"$COMPOSER_DEV_MODE\" = \"1\" ]; then security-checker security:check; fi"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ]
     },
     "extra": {
