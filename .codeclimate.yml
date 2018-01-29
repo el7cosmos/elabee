@@ -2,6 +2,8 @@ version: 2
 plugins:
   phpcodesniffer:
     enabled: true
+      config:
+        standard: "phpcs.xml.dist"
 exclude_patterns:
   - web/themes/custom/vibe/assets/
   - web/themes/custom/vibe/css/
