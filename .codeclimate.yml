@@ -1,3 +1,5 @@
 version: 2
 exclude_patterns:
+  - web/themes/custom/vibe/assets/
+  - web/themes/custom/vibe/css/
   - web/themes/custom/vibe/js/
