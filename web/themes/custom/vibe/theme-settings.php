@@ -4,8 +4,10 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_form_system_theme_settings_alter().
+ *
+ * @param $form
  */
-function vibe_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+function vibe_form_system_theme_settings_alter(&$form) {
   $form['vibe'] = [
     '#type' => 'vertical_tabs',
     '#title' => t('Vibe'),
