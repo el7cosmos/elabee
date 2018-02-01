@@ -506,16 +506,14 @@ $settings['reverse_proxy_addresses'][] = getenv('REMOTE_ADDR');
  * example, to use Symfony's APC class loader without automatic detection,
  * uncomment the code below.
  */
-/*
-if ($settings['hash_salt']) {
-  $prefix = 'drupal.' . hash('sha256', 'drupal.' . $settings['hash_salt']);
-  $apc_loader = new \Symfony\Component\ClassLoader\ApcClassLoader($prefix, $class_loader);
-  unset($prefix);
-  $class_loader->unregister();
-  $apc_loader->register();
-  $class_loader = $apc_loader;
-}
-*/
+# if ($settings['hash_salt']) {
+#   $prefix = 'drupal.' . hash('sha256', 'drupal.' . $settings['hash_salt']);
+#   $apc_loader = new \Symfony\Component\ClassLoader\ApcClassLoader($prefix, $class_loader);
+#   unset($prefix);
+#   $class_loader->unregister();
+#   $apc_loader->register();
+#   $class_loader = $apc_loader;
+# }
 
 /**
  * Authorized file system operations:
