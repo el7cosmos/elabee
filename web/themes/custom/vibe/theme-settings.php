@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * theme-settings.php
+ */
+
 use Drupal\Core\Form\FormStateInterface;
 
 /**
