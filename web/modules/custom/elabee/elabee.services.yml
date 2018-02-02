@@ -4,6 +4,16 @@ services:
     arguments: []
     tags:
       - { name: event_subscriber }
+  elabee.mailgun:
+    class: Drupal\elabee\Mailgun
+    arguments: ['@http_client']
+  elabee.raven:
+    class: Drupal\elabee\Raven
+    arguments:
+      - '@current_user'
+      - '@config.factory'
+      - '@request_stack'
+      - '%kernel.environment%'
   theme.negotiator.elabee:
     class: Drupal\elabee\ElabeeNegotiator
     arguments: ['@path.matcher']
