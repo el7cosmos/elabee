@@ -22,6 +22,7 @@ script:
 
 after_script:
   - ./cc-test-reporter after-build --coverage-input-type clover --exit-code $TRAVIS_TEST_RESULT
+  - codacycoverage clover
 
 cache:
   directories:
