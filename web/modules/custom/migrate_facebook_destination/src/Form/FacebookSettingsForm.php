@@ -16,15 +16,6 @@ class FacebookSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  protected function getEditableConfigNames() {
-    return [
-      self::CONFIG_NAME,
-    ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function getFormId() {
     return 'facebook_settings_form';
   }
@@ -32,7 +23,7 @@ class FacebookSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state): array {
     $config = $this->config(self::CONFIG_NAME);
     $form['app_id'] = [
       '#type' => 'textfield',
@@ -65,13 +56,12 @@ class FacebookSettingsForm extends ConfigFormBase {
 
     $values = $form_state->getValues();
 
-    $fb = new Facebook([
-      'app_id' => $values['app_id'],
-      'app_secret' => $values['app_secret'],
-      'default_access_token' => $values['default_access_token'],
-    ]);
-
     try {
+      $fb = new Facebook([
+        'app_id' => $values['app_id'],
+        'app_secret' => $values['app_secret'],
+        'default_access_token' => $values['default_access_token'],
+      ]);
       $fb->get($form_state->getValue('app_id'));
     }
     catch (\Exception $exception) {
@@ -90,6 +80,15 @@ class FacebookSettingsForm extends ConfigFormBase {
       ->set('app_secret', $form_state->getValue('app_secret'))
       ->set('default_access_token', $form_state->getValue('default_access_token'))
       ->save();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getEditableConfigNames() {
+    return [
+      self::CONFIG_NAME,
+    ];
   }
 
 }
