@@ -9,4 +9,3 @@
 [![Coverage Status](https://coveralls.io/repos/github/el7cosmos/elabee/badge.svg?branch=master)](https://coveralls.io/github/el7cosmos/elabee?branch=master)
 
 [![Dependency Status](https://gemnasium.com/badges/github.com/el7cosmos/elabee.svg)](https://gemnasium.com/github.com/el7cosmos/elabee)
-[![Known Vulnerabilities](https://snyk.io/test/github/el7cosmos/elabee/badge.svg)](https://snyk.io/test/github/el7cosmos/elabee)
