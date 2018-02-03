@@ -44,11 +44,9 @@ class IncomingMail extends ControllerBase {
   /**
    * Constructs the controller object.
    *
-   * @param \Drupal\Core\Session\AccountProxyInterface $account_proxy
    * @param \Mailgun\Mailgun $mailgun
    * @param \Raven_Client $raven_client
    * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
-   * @param $environment
    */
   public function __construct(Mailgun $mailgun, Raven_Client $raven_client, RequestStack $request_stack) {
     $this->mailgun = $mailgun;
