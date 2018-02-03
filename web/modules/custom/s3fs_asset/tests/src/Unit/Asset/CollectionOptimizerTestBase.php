@@ -10,7 +10,7 @@ use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\State\StateInterface;
 use Drupal\Tests\UnitTestCase;
 
-abstract class CollectionOptimizerBase extends UnitTestCase {
+abstract class CollectionOptimizerTestBase extends UnitTestCase {
 
   protected $sut = '';
 
