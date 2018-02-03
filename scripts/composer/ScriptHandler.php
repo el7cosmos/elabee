@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \DrupalProject\composer\ScriptHandler.
- */
-
 namespace DrupalProject\composer;
 
 use Composer\Script\Event;
@@ -29,9 +24,9 @@ class ScriptHandler {
 
     // Required for unit testing
     foreach ($dirs as $dir) {
-      if (!$fs->exists($drupalRoot . '/'. $dir)) {
-        $fs->mkdir($drupalRoot . '/'. $dir);
-        $fs->touch($drupalRoot . '/'. $dir . '/.gitkeep');
+      if (!$fs->exists($drupalRoot . '/' . $dir)) {
+        $fs->mkdir($drupalRoot . '/' . $dir);
+        $fs->touch($drupalRoot . '/' . $dir . '/.gitkeep');
       }
     }
 
