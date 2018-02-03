@@ -7,3 +7,5 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/380b3854c90049abafd5f72338fdefc2)](https://www.codacy.com/app/el7cosmos/elabee?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=el7cosmos/elabee&amp;utm_campaign=Badge_Coverage)
 [![codecov](https://codecov.io/gh/el7cosmos/elabee/branch/master/graph/badge.svg)](https://codecov.io/gh/el7cosmos/elabee)
 [![Coverage Status](https://coveralls.io/repos/github/el7cosmos/elabee/badge.svg?branch=master)](https://coveralls.io/github/el7cosmos/elabee?branch=master)
+
+[![Known Vulnerabilities](https://snyk.io/test/github/el7cosmos/elabee/badge.svg)](https://snyk.io/test/github/el7cosmos/elabee)
