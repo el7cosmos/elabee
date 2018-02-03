@@ -27,7 +27,7 @@ class FacebookGroup extends FacebookBase {
   /**
    * {@inheritdoc}
    */
-  public function fields(MigrationInterface $migration = NULL) {
+  public function fields(MigrationInterface $migration = NULL): array {
     return [
       'message' => $this->t('Message'),
       'link' => $this->t('Link'),
@@ -57,12 +57,7 @@ class FacebookGroup extends FacebookBase {
    * {@inheritdoc}
    */
   public function rollback(array $destination_identifier) {
-    try {
-      $this->facebook->delete(reset($destination_identifier));
-    }
-    catch (FacebookSDKException $exception) {
-    }
-
+    $this->facebook->delete(reset($destination_identifier));
     parent::rollback($destination_identifier);
   }
 

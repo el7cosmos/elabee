@@ -1,0 +1,4 @@
+services:
+  facebook.client:
+    class: Drupal\migrate_facebook_destination\Facebook
+    arguments: ['@config.factory']

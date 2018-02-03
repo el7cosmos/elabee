@@ -2,7 +2,6 @@
 
 namespace Drupal\migrate_facebook_destination\Plugin\migrate\destination;
 
-use Drupal\Core\Config\ImmutableConfig;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\Plugin\migrate\destination\DestinationBase;
 use Drupal\migrate\Plugin\MigrationInterface;
@@ -34,29 +33,33 @@ abstract class FacebookBase extends DestinationBase implements ContainerFactoryP
    *   The plugin implementation definition.
    * @param \Drupal\migrate\Plugin\MigrationInterface $migration
    *   The migration.
-   * @param \Drupal\Core\Config\ImmutableConfig $config
-   *   The facebook configuration.
+   * @param \Facebook\Facebook $facebook
+   *
+   * @throws \Facebook\Exceptions\FacebookSDKException
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration, ImmutableConfig $config) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration, Facebook $facebook) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $migration);
 
-    $this->facebook = new Facebook($config->get());
+    $this->facebook = $facebook;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration = NULL) {
     return new static(
       $configuration,
       $plugin_id,
       $plugin_definition,
       $migration,
-      $container->get('config.factory')->get('migrate_facebook_destination.settings')
+      $container->get('facebook.client')
     );
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getIds() {
+  public function getIds(): array {
     return [
       'id' => [
         'type' => 'string',
