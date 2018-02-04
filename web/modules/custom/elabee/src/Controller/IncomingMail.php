@@ -3,6 +3,9 @@
 namespace Drupal\elabee\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\migrate\MigrateMessage;
+use Drupal\migrate\Plugin\MigrationPluginManagerInterface;
+use Drupal\migrate_tools\MigrateExecutable;
 use Mailgun\Mailgun;
 use Raven_Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -32,11 +35,6 @@ class IncomingMail extends ControllerBase {
   protected $mailgun;
 
   /**
-   * @var \Drupal\migrate\Plugin\MigrationPluginManagerInterface
-   */
-  protected $migrationPluginManager;
-
-  /**
    * @var \Drupal\migrate\Plugin\MigrationInterface
    */
   protected $migration;
@@ -45,11 +43,15 @@ class IncomingMail extends ControllerBase {
    * Constructs the controller object.
    *
    * @param \Mailgun\Mailgun $mailgun
+   * @param \Drupal\migrate\Plugin\MigrationPluginManagerInterface $migration_plugin_manager
    * @param \Raven_Client $raven_client
    * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
+   *
+   * @throws \Drupal\Component\Plugin\Exception\PluginException
    */
-  public function __construct(Mailgun $mailgun, Raven_Client $raven_client, RequestStack $request_stack) {
+  public function __construct(Mailgun $mailgun, MigrationPluginManagerInterface $migration_plugin_manager, Raven_Client $raven_client, RequestStack $request_stack) {
     $this->mailgun = $mailgun;
+    $this->migration = $migration_plugin_manager->createInstance('weeklydrop');
     $this->raven = $raven_client;
     $this->request = $request_stack->getCurrentRequest();
   }
@@ -60,6 +62,7 @@ class IncomingMail extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('elabee.mailgun'),
+      $container->get('plugin.manager.migration'),
       $container->get('elabee.raven'),
       $container->get('request_stack')
     );
@@ -78,7 +81,10 @@ class IncomingMail extends ControllerBase {
 
     $this->raven->captureMessage(__METHOD__, [], ['level' => Raven_Client::DEBUG]);
 
-    return new JsonResponse([]);
+    $executable = new MigrateExecutable($this->migration, new MigrateMessage());
+    $executable->import();
+
+    return new JsonResponse();
   }
 
 }

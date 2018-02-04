@@ -3,12 +3,18 @@
 namespace Drupal\Tests\elabee\Unit\Controller;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\Core\Logger\LoggerChannelInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\elabee\Controller\IncomingMail;
+use Drupal\migrate\Plugin\MigrateIdMapInterface;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\migrate\Plugin\MigrationPluginManagerInterface;
 use Drupal\Tests\UnitTestCase;
 use Mailgun\Api\Webhook;
 use Mailgun\Mailgun;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -57,6 +63,12 @@ class IncomingMailTest extends UnitTestCase {
 
     $raven_client = $this->createMock(\Raven_Client::class);
 
+    $logger_channel = $this->createMock(LoggerChannelInterface::class);
+    $logger_factory = $this->createMock(LoggerChannelFactoryInterface::class);
+    $logger_factory->expects(self::any())
+      ->method('get')
+      ->willReturn($logger_channel);
+
     $request = $this->createMock(Request::class);
     $request->request = $this->createMock(ParameterBag::class);
     $request_stack = $this->createMock(RequestStack::class);
@@ -64,12 +76,28 @@ class IncomingMailTest extends UnitTestCase {
       ->method('getCurrentRequest')
       ->willReturn($request);
 
+    $migration = $this->createMock(MigrationInterface::class);
+    $migration->expects(self::any())
+      ->method('getIdMap')
+      ->willReturn($this->createMock(MigrateIdMapInterface::class));
+    $migration->expects(self::any())
+      ->method('getStatusLabel')
+      ->willReturn('Label');
+    $migration_plugin_manager = $this->createMock(MigrationPluginManagerInterface::class);
+    $migration_plugin_manager->expects(self::any())
+      ->method('createInstance')
+      ->willReturn($migration);
+
     $container = new ContainerBuilder();
     $container->set('config.factory', $config_factory);
+    $container->set('current_user', $current_user);
     $container->set('elabee.mailgun', $mailgun);
     $container->set('elabee.raven', $raven_client);
-    $container->set('current_user', $current_user);
+    $container->set('event_dispatcher', $this->createMock(EventDispatcherInterface::class));
+    $container->set('logger.factory', $logger_factory);
     $container->set('request_stack', $request_stack);
+    $container->set('string_translation', $this->getStringTranslationStub());
+    $container->set('plugin.manager.migration', $migration_plugin_manager);
     $container->setParameter('kernel.environment', 'test');
     \Drupal::setContainer($container);
 
