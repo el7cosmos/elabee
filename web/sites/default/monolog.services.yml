@@ -4,6 +4,7 @@ parameters:
     cron: ['null']
     php: ['error_log']
     page not found: ['null']
+    access denied: ['null']
 
 services:
   monolog.handler.dblog:
