@@ -56,7 +56,6 @@
   <filter>
     <whitelist>
       <directory>./web/modules/custom</directory>
-      <directory>./web/themes/custom</directory>
       <!-- By definition test classes have no tests. -->
       <exclude>
         <directory suffix="Test.php">./</directory>
