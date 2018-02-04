@@ -1,0 +1,25 @@
+services:
+  asset.css.collection_optimizer:
+    class: Drupal\s3fs_asset\Asset\S3fsAssetCssCollectionOptimizer
+    arguments:
+      - '@asset.css.collection_grouper'
+      - '@asset.css.optimizer'
+      - '@asset.css.dumper'
+      - '@state'
+      - '@datetime.time'
+  asset.css.dumper:
+    class: Drupal\s3fs_asset\Asset\S3fsAssetDumper
+    arguments: ['@config.factory']
+  asset.css.optimizer:
+    class: Drupal\s3fs\Asset\S3fsCssOptimizer
+  asset.js.collection_optimizer:
+    class: Drupal\s3fs_asset\Asset\S3fsAssetJsCollectionOptimizer
+    arguments:
+      - '@asset.js.collection_grouper'
+      - '@asset.js.optimizer'
+      - '@asset.js.dumper'
+      - '@state'
+      - '@datetime.time'
+  asset.js.dumper:
+    class: Drupal\s3fs_asset\Asset\S3fsAssetDumper
+    arguments: ['@config.factory']

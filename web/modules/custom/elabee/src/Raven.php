@@ -40,6 +40,7 @@ class Raven extends \Raven_Client {
           'fields_re' => '/(SESS|pass|authorization|password|passwd|secret|password_confirmation|card_number|auth_pw)/i',
         ],
       ],
+      'install_default_breadcrumb_handlers' => FALSE,
     ];
   }
 
