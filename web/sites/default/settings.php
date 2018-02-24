@@ -54,19 +54,7 @@
  * settings.php, you can create a services.yml file in the same directory to
  * register custom, site-specific service definitions and/or swap out default
  * implementations with custom ones.
- *
- * @var string $app_root
- * @var string $site_path
  */
-
-use Dotenv\Dotenv;
-
-$dotenv = new Dotenv($app_root . '/..');
-try {
-  $dotenv->load();
-}
-catch (InvalidArgumentException $exception) {
-}
 
 /**
  * Database settings:
@@ -78,6 +66,7 @@ catch (InvalidArgumentException $exception) {
  *
  * One example of the simplest connection array is shown below. To use the
  * sample settings, copy and uncomment the code below between the @code and
+ *
  * @endcode lines and paste it after the $databases declaration. You will need
  * to replace the database username and password and possibly the host and port
  * with the appropriate credentials for your database system.
@@ -98,29 +87,7 @@ catch (InvalidArgumentException $exception) {
  * );
  * @endcode
  */
-$databases['default']['default'] = [
-  'database' => getenv('DATABASE_NAME'),
-  'username' => getenv('DATABASE_USER'),
-  'password' => getenv('DATABASE_PASSWORD'),
-  'host' => getenv('DATABASE_HOST'),
-  'port' => getenv('DATABASE_PORT'),
-  'prefix' => getenv('DATABASE_PREFIX'),
-  'unix_socket' => getenv('DATABASE_SOCKET'),
-  'driver' => getenv('DATABASE_DRIVER'),
-];
-
-/**
- * Parses database connection from environment if any.
- */
-if ($database_url = getenv('DATABASE_URL')) {
-  $connection = parse_url($database_url);
-
-  $databases['default']['default']['database'] = basename($connection['path']);
-  $databases['default']['default']['username'] = $connection['user'];
-  $databases['default']['default']['password'] = $connection['pass'];
-  $databases['default']['default']['host'] = $connection['host'];
-  $databases['default']['default']['port'] = $connection['port'];
-}
+$databases = [];
 
 /**
  * Customizing database settings.
@@ -154,6 +121,7 @@ if ($database_url = getenv('DATABASE_URL')) {
  * traditionally referred to as master/slave in database server documentation).
  *
  * The general format for the $databases array is as follows:
+ *
  * @code
  * $databases['default']['default'] = $info_array;
  * $databases['default']['replica'][] = $info_array;
@@ -277,13 +245,14 @@ if ($database_url = getenv('DATABASE_URL')) {
  * array key CONFIG_ACTIVE_DIRECTORY.
  *
  * Example:
+ *
  * @code
  *   $config_directories = array(
  *     CONFIG_SYNC_DIRECTORY => '/directory/outside/webroot',
  *   );
  * @endcode
  */
-$config_directories['sync'] = '../config/sync';
+$config_directories = [];
 
 /**
  * Settings:
@@ -310,7 +279,7 @@ $config_directories['sync'] = '../config/sync';
  *   service requires the install profile use the 'install_profile' container
  *   parameter. Functional code can use \Drupal::installProfile().
  */
-$settings['install_profile'] = 'minimal';
+# $settings['install_profile'] = '';
 
 /**
  * Salt for one-time login links, cancel links, form tokens, etc.
@@ -325,11 +294,12 @@ $settings['install_profile'] = 'minimal';
  * stored with backups of your database.
  *
  * Example:
+ *
  * @code
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = getenv('HASH_SALT');
+$settings['hash_salt'] = '';
 
 /**
  * Deployment identifier.
@@ -405,7 +375,7 @@ $settings['update_free_access'] = FALSE;
  * Be aware, however, that it is likely that this would allow IP
  * address spoofing unless more advanced precautions are taken.
  */
-$settings['reverse_proxy'] = TRUE;
+# $settings['reverse_proxy'] = TRUE;
 
 /**
  * Specify every reverse proxy IP address in your environment.
@@ -506,14 +476,16 @@ $settings['reverse_proxy_addresses'][] = getenv('REMOTE_ADDR');
  * example, to use Symfony's APC class loader without automatic detection,
  * uncomment the code below.
  */
-# if ($settings['hash_salt']) {
-#   $prefix = 'drupal.' . hash('sha256', 'drupal.' . $settings['hash_salt']);
-#   $apc_loader = new \Symfony\Component\ClassLoader\ApcClassLoader($prefix, $class_loader);
-#   unset($prefix);
-#   $class_loader->unregister();
-#   $apc_loader->register();
-#   $class_loader = $apc_loader;
-# }
+/*
+if ($settings['hash_salt']) {
+  $prefix = 'drupal.' . hash('sha256', 'drupal.' . $settings['hash_salt']);
+  $apc_loader = new \Symfony\Component\ClassLoader\ApcClassLoader($prefix, $class_loader);
+  unset($prefix);
+  $class_loader->unregister();
+  $apc_loader->register();
+  $class_loader = $apc_loader;
+}
+*/
 
 /**
  * Authorized file system operations:
@@ -558,9 +530,7 @@ $settings['reverse_proxy_addresses'][] = getenv('REMOTE_ADDR');
  * security by serving user-uploaded files from a different domain or subdomain
  * pointing to the same server. Do not include a trailing slash.
  */
-if ($url = getenv('FILE_PUBLIC_BASE_URL')) {
-  $settings['file_public_base_url'] = $url;
-}
+# $settings['file_public_base_url'] = 'http://downloads.example.com/files';
 
 /**
  * Public file path:
@@ -754,6 +724,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * like to allow.
  *
  * For example:
+ *
  * @code
  * $settings['trusted_host_patterns'] = array(
  *   '^www\.example\.com$',
@@ -778,7 +749,6 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
-$settings['trusted_host_patterns'] = explode(':', getenv('TRUSTED_HOST_PATTERN'));
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.
@@ -815,10 +785,79 @@ $settings['entity_update_batch_size'] = 50;
  *
  * Keep this code block at the end of this file to take full effect.
  */
+#
+# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+#   include $app_root . '/' . $site_path . '/settings.local.php';
+# }
+$config_directories['sync'] = '../config/sync';
 
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-  include $app_root . '/' . $site_path . '/settings.local.php';
+// Load .env file if exists
+if (file_exists(dirname(DRUPAL_ROOT) . '/.env')) {
+  // Load environment
+  $dotenv = new \Dotenv\Dotenv(dirname(DRUPAL_ROOT));
+  $dotenv->load();
 }
+
+# Load environment
+$env = getenv('ENVIRONMENT');
+
+# Load key/value settings
+$settings_drupal = array_filter(
+  $_SERVER,
+  function ($key) {
+    return strpos($key, 'SETTINGS_') === 0;
+  },
+  ARRAY_FILTER_USE_KEY
+);
+
+# Set key/value settings
+foreach ($settings_drupal as $name => $value) {
+  if (substr($name, 0, 9) === 'SETTINGS_') {
+    $key = strtolower(substr($name, 9));
+    $settings[$key] = $value;
+  }
+}
+
+$base_path = $app_root . '/' . $site_path;
+$servicesFile = $base_path . '/services.' . $env . '.yml';
+$settingsFile = $base_path . '/settings.' . $env . '.php';
+
+// Load services definition file.
+if (file_exists($servicesFile)) {
+  $settings['container_yamls'][] = $servicesFile;
+}
+
+// Load settings file.
+if (file_exists($settingsFile)) {
+  include $settingsFile;
+}
+
+$databases['default']['default'] = [
+  'database' => getenv('DATABASE_NAME'),
+  'username' => getenv('DATABASE_USER'),
+  'password' => getenv('DATABASE_PASSWORD'),
+  'prefix' => '',
+  'host' => getenv('DATABASE_HOST'),
+  'port' => getenv('DATABASE_PORT'),
+  'unix_socket' => getenv('DATABASE_SOCKET'),
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => getenv('DATABASE_DRIVER'),
+];
+
+/**
+ * Parses database connection from environment if any.
+ */
+if ($database_url = getenv('DATABASE_URL')) {
+  $connection = parse_url($database_url);
+
+  $databases['default']['default']['database'] = basename($connection['path']);
+  $databases['default']['default']['username'] = $connection['user'];
+  $databases['default']['default']['password'] = $connection['pass'];
+  $databases['default']['default']['host'] = $connection['host'];
+  $databases['default']['default']['port'] = $connection['port'];
+}
+
+$settings['trusted_host_patterns'] = explode(':', getenv('TRUSTED_HOST_PATTERN'));
 
 /**
  * S3 File System.
