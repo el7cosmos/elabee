@@ -1,4 +1,5 @@
 exclude:
+  - web/sites/default/settings*.php
   - web/themes/custom/vibe/assets/*
   - web/themes/custom/vibe/css/*
   - web/themes/custom/vibe/js/*
