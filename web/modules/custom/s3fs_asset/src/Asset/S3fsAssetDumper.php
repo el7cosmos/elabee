@@ -20,7 +20,7 @@ class S3fsAssetDumper extends AssetDumper {
    *   The config factory service.
    */
   public function __construct(ConfigFactoryInterface $config_factory) {
-    $this->config = $config_factory->get('s3fs.settings');
+    $this->config = $config_factory->get('system.performance');
   }
 
   /**
@@ -44,7 +44,7 @@ class S3fsAssetDumper extends AssetDumper {
     // file) in generating the file anyway. Sites on servers where rewrite rules
     // aren't working can set css.gzip to FALSE in order to skip
     // generating a file that won't be used.
-    if (extension_loaded('zlib') && \Drupal::config('system.performance')->get($file_extension . '.gzip')) {
+    if (extension_loaded('zlib') && $this->config->get($file_extension . '.gzip')) {
       $data = gzencode($data, 9, FORCE_GZIP);
     }
 

@@ -7,18 +7,25 @@ use Drupal\Core\Asset\AssetCollectionGrouperInterface;
 use Drupal\Core\Asset\AssetDumperInterface;
 use Drupal\Core\Asset\AssetOptimizerInterface;
 use Drupal\Core\Asset\CssCollectionOptimizer;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\State\StateInterface;
 
 class S3fsAssetCssCollectionOptimizer extends CssCollectionOptimizer {
+
+  /**
+   * @var \Drupal\Core\Config\ImmutableConfig
+   */
+  protected $config;
 
   /**
    * @var \Drupal\Component\Datetime\TimeInterface
    */
   protected $time;
 
-  public function __construct(AssetCollectionGrouperInterface $grouper, AssetOptimizerInterface $optimizer, AssetDumperInterface $dumper, StateInterface $state, TimeInterface $time) {
+  public function __construct(AssetCollectionGrouperInterface $grouper, AssetOptimizerInterface $optimizer, AssetDumperInterface $dumper, ConfigFactoryInterface $config_factory, StateInterface $state, TimeInterface $time) {
     parent::__construct($grouper, $optimizer, $dumper, $state);
 
+    $this->config = $config_factory->get('system.performance');
     $this->time = $time;
   }
 
@@ -30,7 +37,7 @@ class S3fsAssetCssCollectionOptimizer extends CssCollectionOptimizer {
 
     $delete_stale = function ($uri) {
       // Default stale file threshold is 30 days.
-      if ($this->time->getRequestTime() - filemtime($uri) > \Drupal::config('system.performance')->get('stale_file_threshold')) {
+      if ($this->time->getRequestTime() - filemtime($uri) > $this->config->get('stale_file_threshold')) {
         file_unmanaged_delete($uri);
       }
     };

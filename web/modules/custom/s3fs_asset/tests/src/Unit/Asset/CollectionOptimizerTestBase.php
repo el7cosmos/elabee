@@ -6,7 +6,6 @@ use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Asset\AssetCollectionGrouperInterface;
 use Drupal\Core\Asset\AssetDumperInterface;
 use Drupal\Core\Asset\AssetOptimizerInterface;
-use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\State\StateInterface;
 use Drupal\Tests\UnitTestCase;
 
@@ -18,27 +17,20 @@ abstract class CollectionOptimizerTestBase extends UnitTestCase {
     $grouper = $this->createMock(AssetCollectionGrouperInterface::class);
     $optimizer = $this->createMock(AssetOptimizerInterface::class);
     $dumper = $this->createMock(AssetDumperInterface::class);
+    $config_factory = $this->getConfigFactoryStub([
+      'system.performance' => [
+        'stale_file_threshold' => 0,
+      ],
+    ]);
     $state = $this->createMock(StateInterface::class);
     $time = $this->createMock(TimeInterface::class);
     $time->expects(self::any())
       ->method('getRequestTime')
       ->willReturn(time());
 
-    $collection_optimizer = new $this->sut($grouper, $optimizer, $dumper, $state, $time);
+    /** @var \Drupal\Core\Asset\AssetCollectionOptimizerInterface $collection_optimizer */
+    $collection_optimizer = new $this->sut($grouper, $optimizer, $dumper, $config_factory, $state, $time);
     self::assertEmpty($collection_optimizer->deleteAll());
-  }
-
-  protected function setUp() {
-    parent::setUp();
-
-    $config_factory = $this->getConfigFactoryStub([
-      'system.performance' => [
-        'stale_file_threshold' => 0,
-      ],
-    ]);
-    $container = new ContainerBuilder();
-    $container->set('config.factory', $config_factory);
-    \Drupal::setContainer($container);
   }
 
 }

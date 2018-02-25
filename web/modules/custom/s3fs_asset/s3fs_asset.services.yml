@@ -5,6 +5,7 @@ services:
       - '@asset.css.collection_grouper'
       - '@asset.css.optimizer'
       - '@asset.css.dumper'
+      - '@config.factory'
       - '@state'
       - '@datetime.time'
   asset.css.dumper:
@@ -18,6 +19,7 @@ services:
       - '@asset.js.collection_grouper'
       - '@asset.js.optimizer'
       - '@asset.js.dumper'
+      - '@config.factory'
       - '@state'
       - '@datetime.time'
   asset.js.dumper:
