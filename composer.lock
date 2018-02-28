@@ -1574,7 +1574,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -2393,16 +2393,17 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "Bootstrap include warning": "https://www.drupal.org/files/issues/bootstrap-include-warning-2922274-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "Edwin Knol",
+                    "homepage": "https://www.drupal.org/user/2735035"
+                },
                 {
                     "name": "emmanuelmaltete",
                     "homepage": "https://www.drupal.org/user/2824201"
@@ -2416,6 +2417,10 @@
                     "homepage": "https://www.drupal.org/user/1695422"
                 },
                 {
+                    "name": "malphas",
+                    "homepage": "https://www.drupal.org/user/496642"
+                },
+                {
                     "name": "mhmhartman",
                     "homepage": "https://www.drupal.org/user/2002032"
                 },
@@ -2424,6 +2429,7 @@
                     "homepage": "https://www.drupal.org/user/2748021"
                 }
             ],
+            "description": "FortyTwo - Administration theme based on fortytwo",
             "homepage": "https://www.drupal.org/project/fortytwo_admin",
             "support": {
                 "source": "http://cgit.drupalcode.org/fortytwo_admin"
@@ -2464,7 +2470,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -7048,7 +7054,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -8441,16 +8447,16 @@
         },
         {
             "name": "sensiolabs/security-checker",
-            "version": "v4.1.7",
+            "version": "v4.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "d539ccba2b4dce515de04f16b7ed7ae5b9eeb434"
+                "reference": "dc270d5fec418cc6ac983671dba5d80ffaffb142"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/d539ccba2b4dce515de04f16b7ed7ae5b9eeb434",
-                "reference": "d539ccba2b4dce515de04f16b7ed7ae5b9eeb434",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/dc270d5fec418cc6ac983671dba5d80ffaffb142",
+                "reference": "dc270d5fec418cc6ac983671dba5d80ffaffb142",
                 "shasum": ""
             },
             "require": {
@@ -8482,7 +8488,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2018-01-11T05:54:03+00:00"
+            "time": "2018-02-28T22:10:01+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
