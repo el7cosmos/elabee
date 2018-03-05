@@ -1574,7 +1574,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -2366,17 +2366,17 @@
         },
         {
             "name": "drupal/fortytwo_admin",
-            "version": "1.14.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/fortytwo_admin",
-                "reference": "8.x-1.14"
+                "reference": "8.x-1.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fortytwo_admin-8.x-1.14.zip",
-                "reference": "8.x-1.14",
-                "shasum": "d2986a7fab8fac98c9fa36e60134011ec9e91eb4"
+                "url": "https://ftp.drupal.org/files/projects/fortytwo_admin-8.x-1.15.zip",
+                "reference": "8.x-1.15",
+                "shasum": "eeffd3188bff3d5856ea22b7d8675adb40a382a7"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2387,22 +2387,23 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.14",
-                    "datestamp": "1507547343",
+                    "version": "8.x-1.15",
+                    "datestamp": "1520261284",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "Bootstrap include warning": "https://www.drupal.org/files/issues/bootstrap-include-warning-2922274-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "Edwin Knol",
+                    "homepage": "https://www.drupal.org/user/2735035"
+                },
                 {
                     "name": "emmanuelmaltete",
                     "homepage": "https://www.drupal.org/user/2824201"
@@ -2416,6 +2417,10 @@
                     "homepage": "https://www.drupal.org/user/1695422"
                 },
                 {
+                    "name": "malphas",
+                    "homepage": "https://www.drupal.org/user/496642"
+                },
+                {
                     "name": "mhmhartman",
                     "homepage": "https://www.drupal.org/user/2002032"
                 },
@@ -2424,6 +2429,7 @@
                     "homepage": "https://www.drupal.org/user/2748021"
                 }
             ],
+            "description": "FortyTwo - Administration theme based on fortytwo",
             "homepage": "https://www.drupal.org/project/fortytwo_admin",
             "support": {
                 "source": "http://cgit.drupalcode.org/fortytwo_admin"
@@ -2464,7 +2470,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -7048,7 +7054,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
