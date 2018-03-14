@@ -1,2 +1,2 @@
 release: drush heroku:release
-web: heroku-php-nginx -C nginx_app.conf web
+web: heroku-php-nginx -c nginx.conf -C nginx.inc.conf web
