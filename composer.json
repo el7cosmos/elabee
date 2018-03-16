@@ -70,6 +70,7 @@
         "php-http/guzzle6-adapter": "^1.1",
         "sentry/sentry": "^1.8",
         "twbs/bootstrap": "^3.3",
+        "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
     },
@@ -95,7 +96,8 @@
         "classmap": [
             "scripts/composer/ScriptHandler.php",
             "scripts/composer/Heroku.php"
-        ]
+        ],
+        "files": ["load.environment.php"]
     },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
