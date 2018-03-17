@@ -47,7 +47,6 @@
         "php": "~7.1.0",
         "ext-gd": "*",
         "ext-redis": "*",
-        "composer/installers": "^1.5",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.4",
         "drupal/config_ignore": "^2.1",
@@ -69,10 +68,7 @@
         "mailgun/mailgun-php": "^2.4",
         "php-http/guzzle6-adapter": "^1.1",
         "sentry/sentry": "^1.8",
-        "twbs/bootstrap": "^3.3",
-        "vlucas/phpdotenv": "^2.4",
-        "webflo/drupal-finder": "^1.1",
-        "webmozart/path-util": "^2.3"
+        "twbs/bootstrap": "^3.3"
     },
     "require-dev": {
         "behat/mink": "~1.7@dev",
