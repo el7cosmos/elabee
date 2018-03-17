@@ -10,7 +10,6 @@ plugins:
       standard: "phpcs.xml.dist"
     exclude_patterns:
       - "nginx.conf.php"
-      - "web/sites/**/*.settings.php"
 
 exclude_patterns:
   - "web/themes/custom/vibe/assets/"
