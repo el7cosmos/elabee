@@ -12,6 +12,6 @@ plugins:
     - "!web/modules/custom/"
     - "!web/themes/custom/"
 exclude_patterns:
-  - "web/themes/custom/vibe/assets/"
-  - "web/themes/custom/vibe/css/"
-  - "web/themes/custom/vibe/js/"
+- "web/themes/custom/vibe/assets/"
+- "web/themes/custom/vibe/css/"
+- "web/themes/custom/vibe/js/"
