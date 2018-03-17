@@ -56,7 +56,7 @@
         "drupal/console-dotenv": "^0.3.0",
         "drupal/core": "~8.4",
         "drupal/fontawesome": "^2.0",
-        "drupal/fortytwo_admin": "^1.14",
+        "drupal/fortytwo_admin": "^1.15",
         "drupal/fortytwo_admin_toolbar": "^1.6",
         "drupal/migrate_plus": "^4.0@beta",
         "drupal/migrate_tools": "^4.0@beta",
