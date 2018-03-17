@@ -63,7 +63,7 @@
         "drupal/monolog": "^1.0",
         "drupal/redis": "^1.0@rc",
         "drupal/s3fs": "^3.0@alpha",
-        "drush/drush": "^9.0",
+        "drush/drush": "^9.2",
         "facebook/graph-sdk": "^5.6",
         "fortawesome/font-awesome": "^5.0",
         "mailgun/mailgun-php": "^2.4",
