@@ -791,13 +791,6 @@ $settings['entity_update_batch_size'] = 50;
 # }
 $config_directories['sync'] = '../config/sync';
 
-// Load .env file if exists
-if (file_exists(dirname(DRUPAL_ROOT) . '/.env')) {
-  // Load environment
-  $dotenv = new \Dotenv\Dotenv(dirname(DRUPAL_ROOT));
-  $dotenv->load();
-}
-
 # Load environment
 $env = getenv('ENVIRONMENT');
 
