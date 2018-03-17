@@ -1575,7 +1575,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -2394,16 +2394,17 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "Bootstrap include warning": "https://www.drupal.org/files/issues/bootstrap-include-warning-2922274-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "Edwin Knol",
+                    "homepage": "https://www.drupal.org/user/2735035"
+                },
                 {
                     "name": "emmanuelmaltete",
                     "homepage": "https://www.drupal.org/user/2824201"
@@ -2417,6 +2418,10 @@
                     "homepage": "https://www.drupal.org/user/1695422"
                 },
                 {
+                    "name": "malphas",
+                    "homepage": "https://www.drupal.org/user/496642"
+                },
+                {
                     "name": "mhmhartman",
                     "homepage": "https://www.drupal.org/user/2002032"
                 },
@@ -2425,6 +2430,7 @@
                     "homepage": "https://www.drupal.org/user/2748021"
                 }
             ],
+            "description": "FortyTwo - Administration theme based on fortytwo",
             "homepage": "https://www.drupal.org/project/fortytwo_admin",
             "support": {
                 "source": "http://cgit.drupalcode.org/fortytwo_admin"
@@ -2465,7 +2471,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -7049,7 +7055,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
