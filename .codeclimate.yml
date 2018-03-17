@@ -9,8 +9,8 @@ plugins:
     config:
       standard: "phpcs.xml.dist"
 exclude_patterns:
-  - !web/modules/custom
-  - !web/themes/custom
-  - web/themes/custom/vibe/assets/
-  - web/themes/custom/vibe/css/
-  - web/themes/custom/vibe/js/
+  - "!web/modules/custom/"
+  - "!web/themes/custom/"
+  - "web/themes/custom/vibe/assets/"
+  - "web/themes/custom/vibe/css/"
+  - "web/themes/custom/vibe/js/"
