@@ -865,7 +865,7 @@ $config['s3fs.settings']['region'] = 'nyc3';
 /**
  * Redis
  */
-if ($redis_url = getenv('REDIS_URL') || $redis_socket = getenv('REDIS_SOCKET')) {
+if ($redis_url = getenv('REDIS_URL')) {
   $redis_connection = parse_url($redis_url);
 
   $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/redis.services.yml';
@@ -883,10 +883,6 @@ if ($redis_url = getenv('REDIS_URL') || $redis_socket = getenv('REDIS_SOCKET')) 
   }
   if (!empty(getenv('REDIS_BASE'))) {
     $settings['redis.connection']['base'] = getenv('REDIS_BASE');
-  }
-
-  if (!empty($redis_socket)) {
-    $conf['redis_cache_socket'] = $redis_socket;
   }
 
   $settings['cache_prefix'] = 'elabee';
