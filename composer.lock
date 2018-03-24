@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "91267d1de7e03e4a32befd2c814c1a2f",
+    "content-hash": "1a4555da06fb281ab9f70bc48573e5ad",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2786,6 +2786,9 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Deprecation warning in PHP 7.2": "https://www.drupal.org/files/issues/2944186-1-remove-string-assert.patch"
                 }
             },
             "autoload": {
