@@ -1,5 +1,7 @@
 <?php
 
+// @codingStandardsIgnoreFile
+
 /**
  * @file
  * Drupal site-specific configuration file.
@@ -791,13 +793,6 @@ $settings['entity_update_batch_size'] = 50;
 # }
 $config_directories['sync'] = '../config/sync';
 
-// Load .env file if exists
-if (file_exists(dirname(DRUPAL_ROOT) . '/.env')) {
-  // Load environment
-  $dotenv = new \Dotenv\Dotenv(dirname(DRUPAL_ROOT));
-  $dotenv->load();
-}
-
 # Load environment
 $env = getenv('ENVIRONMENT');
 
@@ -870,7 +865,7 @@ $config['s3fs.settings']['region'] = 'nyc3';
 /**
  * Redis
  */
-if ($redis_url = getenv('REDIS_URL')) {
+if ($redis_url = getenv('REDIS_URL') || $redis_socket = getenv('REDIS_SOCKET')) {
   $redis_connection = parse_url($redis_url);
 
   $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/redis.services.yml';
@@ -889,7 +884,13 @@ if ($redis_url = getenv('REDIS_URL')) {
   if (!empty(getenv('REDIS_BASE'))) {
     $settings['redis.connection']['base'] = getenv('REDIS_BASE');
   }
+
+  if ($redis_socket) {
+    $conf['redis_cache_socket'] = '/tmp/redis.sock';
+  }
+
   $settings['cache_prefix'] = 'elabee';
+  $settings['queue_default'] = 'queue.redis';
 }
 
 /**

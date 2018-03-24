@@ -8,9 +8,10 @@ plugins:
     enabled: true
     config:
       standard: "phpcs.xml.dist"
+    exclude_patterns:
+      - "nginx.conf.php"
+
 exclude_patterns:
-  - web/sites/default/default.settings.php
-  - web/sites/example.settings.local.php
-  - web/themes/custom/vibe/assets/
-  - web/themes/custom/vibe/css/
-  - web/themes/custom/vibe/js/
+  - "web/themes/custom/vibe/assets/"
+  - "web/themes/custom/vibe/css/"
+  - "web/themes/custom/vibe/js/"

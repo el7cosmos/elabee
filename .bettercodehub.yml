@@ -1,4 +1,5 @@
 exclude:
+  - web/.ht.router.php
   - web/sites/default/settings*.php
   - web/themes/custom/vibe/assets/*
   - web/themes/custom/vibe/css/*
