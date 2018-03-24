@@ -885,8 +885,8 @@ if ($redis_url = getenv('REDIS_URL') || $redis_socket = getenv('REDIS_SOCKET')) 
     $settings['redis.connection']['base'] = getenv('REDIS_BASE');
   }
 
-  if ($redis_socket) {
-    $conf['redis_cache_socket'] = '/tmp/redis.sock';
+  if (!empty($redis_socket)) {
+    $conf['redis_cache_socket'] = $redis_socket;
   }
 
   $settings['cache_prefix'] = 'elabee';
