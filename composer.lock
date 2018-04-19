@@ -1583,7 +1583,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -2373,7 +2373,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0",
-                    "datestamp": "1519143180",
+                    "datestamp": "1523983080",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2422,17 +2422,17 @@
         },
         {
             "name": "drupal/fortytwo_admin",
-            "version": "1.15.0",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/fortytwo_admin",
-                "reference": "8.x-1.15"
+                "reference": "8.x-1.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fortytwo_admin-8.x-1.15.zip",
-                "reference": "8.x-1.15",
-                "shasum": "eeffd3188bff3d5856ea22b7d8675adb40a382a7"
+                "url": "https://ftp.drupal.org/files/projects/fortytwo_admin-8.x-1.17.zip",
+                "reference": "8.x-1.17",
+                "shasum": "cd975b03462c99953476c89715651d50a2ad11dd"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2443,8 +2443,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.15",
-                    "datestamp": "1520261284",
+                    "version": "8.x-1.17",
+                    "datestamp": "1524145984",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2529,7 +2529,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -7410,7 +7410,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
