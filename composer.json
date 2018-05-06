@@ -68,7 +68,7 @@
         "fortawesome/font-awesome": "^5.0",
         "mailgun/mailgun-php": "^2.5",
         "php-http/guzzle6-adapter": "^1.1",
-        "sentry/sentry": "^1.8",
+        "sentry/sentry": "^1.9",
         "twbs/bootstrap": "^3.3"
     },
     "require-dev": {
