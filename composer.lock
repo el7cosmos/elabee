@@ -1583,7 +1583,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -2351,17 +2351,17 @@
         },
         {
             "name": "drupal/fontawesome",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/fontawesome",
-                "reference": "8.x-2.1"
+                "reference": "8.x-2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.1.zip",
-                "reference": "8.x-2.1",
-                "shasum": "fdb44c935091b296e7fb61435f9de0d85c2e2bf7"
+                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.2.zip",
+                "reference": "8.x-2.2",
+                "shasum": "01ccb314a33db936fb18ab570441e1d8c9ab5894"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2372,8 +2372,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.1",
-                    "datestamp": "1523983080",
+                    "version": "8.x-2.2",
+                    "datestamp": "1526243880",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2531,7 +2531,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -7414,7 +7414,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
