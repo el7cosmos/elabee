@@ -858,6 +858,8 @@ $settings['trusted_host_patterns'] = explode(':', getenv('TRUSTED_HOST_PATTERN')
  */
 $settings['php_storage']['twig']['directory'] = '../storage/php';
 $settings['s3fs.use_s3_for_public'] = (bool) getenv('S3_PUBLIC');
+$settings['s3fs.access_key'] = getenv('AWS_ACCESS_KEY_ID');
+$settings['s3fs.secret_key'] = getenv('AWS_SECRET_ACCESS_KEY');
 $config['s3fs.settings']['access_key'] = getenv('AWS_ACCESS_KEY_ID');
 $config['s3fs.settings']['secret_key'] = getenv('AWS_SECRET_ACCESS_KEY');
 $config['s3fs.settings']['region'] = 'nyc3';
