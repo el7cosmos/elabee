@@ -16,13 +16,6 @@ class Heroku {
     $finder->locateRoot(getcwd());
     $root = $finder->getComposerRoot();
 
-    try {
-      $dotenv = new Dotenv($root);
-      $dotenv->load();
-    }
-    catch (InvalidArgumentException $exception) {
-    }
-
     if (!$fs->exists($root . '/.pgpass') && $database_url = getenv('DATABASE_URL')) {
       $connection = parse_url($database_url);
       $pass = implode(':', [
