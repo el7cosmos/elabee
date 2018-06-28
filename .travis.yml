@@ -10,6 +10,7 @@ install:
   - composer install --ignore-platform-reqs --no-suggest
   - export COMPOSER_BIN_DIR=$TRAVIS_BUILD_DIR/vendor/bin
   - export PATH=$COMPOSER_BIN_DIR:$PATH
+  - npm install -g snyk
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -24,6 +25,7 @@ after_script:
   - ./cc-test-reporter after-build --coverage-input-type clover --exit-code $TRAVIS_TEST_RESULT
   - codacycoverage clover
   - php-coveralls
+  - snyk monitor
 
 cache:
   directories:
