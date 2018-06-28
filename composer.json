@@ -60,7 +60,7 @@
         "drupal/migrate_tools": "^4.0@beta",
         "drupal/minifyhtml": "^1.1",
         "drupal/monolog": "^1.0",
-        "drupal/redis": "^1.0@rc",
+        "drupal/redis": "^1.0",
         "drupal/s3fs": "^3.0@alpha",
         "drush/drush": "^9.2",
         "facebook/graph-sdk": "^5.6",
@@ -122,11 +122,6 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
-        },
-        "patches": {
-            "drupal/redis": {
-                "Deprecation warning in PHP 7.2": "https://www.drupal.org/files/issues/2944186-1-remove-string-assert.patch"
-            }
         },
         "drupal-scaffold": {
             "initial": {

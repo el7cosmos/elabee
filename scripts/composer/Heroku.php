@@ -3,9 +3,7 @@
 namespace DrupalProject\composer;
 
 use Composer\Script\Event;
-use Dotenv\Dotenv;
 use DrupalFinder\DrupalFinder;
-use InvalidArgumentException;
 use Symfony\Component\Filesystem\Filesystem;
 
 class Heroku {
