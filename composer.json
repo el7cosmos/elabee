@@ -19,10 +19,10 @@
             "type": "package",
             "package": {
                 "name": "fortawesome/font-awesome",
-                "version": "5.0.6",
+                "version": "5.1.1",
                 "type": "drupal-library",
                 "dist": {
-                    "url": "https://github.com/FortAwesome/Font-Awesome/releases/download/5.0.6/fontawesome-free-5.0.6.zip",
+                    "url": "https://github.com/FortAwesome/Font-Awesome/releases/download/5.1.1/fontawesome-free-5.1.1-web.zip",
                     "type": "zip"
                 },
                 "extra": {
@@ -45,6 +45,7 @@
     ],
     "require": {
         "php": "~7.2.0",
+        "ext-apcu": "*",
         "ext-gd": "*",
         "ext-redis": "*",
         "cweagans/composer-patches": "^1.6",

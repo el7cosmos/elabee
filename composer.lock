@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14684f041a3fb023c4231b7689f7045d",
+    "content-hash": "ff350932421f26f2f89010e5e84c14ec",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3388,10 +3388,10 @@
         },
         {
             "name": "fortawesome/font-awesome",
-            "version": "5.0.6",
+            "version": "5.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/FortAwesome/Font-Awesome/releases/download/5.0.6/fontawesome-free-5.0.6.zip",
+                "url": "https://github.com/FortAwesome/Font-Awesome/releases/download/5.1.1/fontawesome-free-5.1.1-web.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -9895,6 +9895,7 @@
     "prefer-lowest": false,
     "platform": {
         "php": "~7.2.0",
+        "ext-apcu": "*",
         "ext-gd": "*",
         "ext-redis": "*"
     },
