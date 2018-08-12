@@ -53,7 +53,7 @@
         "drupal/console": "^1.8",
         "drupal/console-dotenv": "^0.3.0",
         "drupal/core": "~8.5",
-        "drupal/fontawesome": "^2.1",
+        "drupal/fontawesome": "^2.4",
         "drupal/fortytwo_admin": "^1.17",
         "drupal/fortytwo_admin_toolbar": "^1.6",
         "drupal/migrate_plus": "^4.0@beta",
@@ -90,7 +90,8 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "apcu-autoloader": true
     },
     "autoload": {
         "classmap": [
