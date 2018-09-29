@@ -2593,7 +2593,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.4",
-                    "datestamp": "1531922912",
+                    "datestamp": "1535395080",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2813,7 +2813,7 @@
                 },
                 "drupal": {
                     "version": "8.x-4.0-beta3",
-                    "datestamp": "1519400592",
+                    "datestamp": "1535381280",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -2871,7 +2871,7 @@
                 },
                 "drupal": {
                     "version": "8.x-4.0-beta3",
-                    "datestamp": "1519400285",
+                    "datestamp": "1531143824",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -2911,20 +2911,20 @@
         },
         {
             "name": "drupal/minifyhtml",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/minifyhtml",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/minifyhtml-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "d76cd6ee08d868fcad3b5e57666de3dff4cd3f95"
+                "url": "https://ftp.drupal.org/files/projects/minifyhtml-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "d2e0664a27f781580a53363718ee433d3d5ce235"
             },
             "require": {
-                "drupal/core": "~8.0"
+                "drupal/core": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -2932,8 +2932,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1503086943",
+                    "version": "8.x-1.2",
+                    "datestamp": "1537409583",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3105,7 +3105,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0-alpha12",
-                    "datestamp": "1527867484",
+                    "datestamp": "1531121921",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
