@@ -70,7 +70,7 @@
         "php-http/guzzle6-adapter": "^1.1",
         "sentry/sentry": "^1.9",
         "twbs/bootstrap": "^3.3",
-        "vlucas/phpdotenv": "^2.4"
+        "vlucas/phpdotenv": "^2.5"
     },
     "require-dev": {
         "behat/mink": "~1.7@dev",
