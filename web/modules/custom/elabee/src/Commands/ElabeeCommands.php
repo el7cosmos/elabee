@@ -30,6 +30,8 @@ class ElabeeCommands extends DrushCommands {
   protected $settings;
 
   public function __construct(ConfigFactoryInterface $config_factory, S3fsServiceInterface $s3fs) {
+    parent::__construct();
+
     $this->s3fs = $s3fs;
     $this->settings = $config_factory->get('s3fs.settings')->get();
   }
@@ -41,8 +43,10 @@ class ElabeeCommands extends DrushCommands {
    *
    * @throws \Exception
    */
-  public function release() {
+  public function release(): void {
     drush_invoke_process('@self', 'cache:rebuild');
+    drush_invoke_process('@self', 'updatedb');
+    drush_invoke_process('@self', 'entity:updates');
     drush_invoke_process('@self', 'config-split:import');
 
     if ($this->s3fs->validate($this->settings)) {
