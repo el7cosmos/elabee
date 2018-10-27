@@ -862,7 +862,10 @@ $settings['s3fs.access_key'] = getenv('AWS_ACCESS_KEY_ID');
 $settings['s3fs.secret_key'] = getenv('AWS_SECRET_ACCESS_KEY');
 $config['s3fs.settings']['access_key'] = getenv('AWS_ACCESS_KEY_ID');
 $config['s3fs.settings']['secret_key'] = getenv('AWS_SECRET_ACCESS_KEY');
-$config['s3fs.settings']['region'] = 'nyc3';
+$config['s3fs.settings']['bucket'] = getenv('S3_BUCKET');
+$config['s3fs.settings']['domain'] = getenv('S3_DOMAIN');
+$config['s3fs.settings']['hostname'] = getenv('S3_HOSTNAME');
+$config['s3fs.settings']['region'] = 'sgp1';
 
 /**
  * Redis

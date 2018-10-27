@@ -4,9 +4,9 @@ use_instance_profile: false
 default_cache_config: ''
 bucket: elabee
 region: ''
-use_cname: false
+use_cname: true
 use_customhost: true
-hostname: nyc3.digitaloceanspaces.com
+hostname: ''
 domain: ''
 cache_control_header: 'public, max-age=86400'
 encryption: ''
@@ -20,3 +20,4 @@ private_folder: private
 presigned_urls: ''
 saveas: ''
 torrents: ''
+credentials_file: ''
