@@ -2597,7 +2597,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.4",
-                    "datestamp": "1531922912",
+                    "datestamp": "1535395080",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2787,17 +2787,17 @@
         },
         {
             "name": "drupal/migrate_plus",
-            "version": "4.0.0-beta3",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/migrate_plus",
-                "reference": "8.x-4.0-beta3"
+                "reference": "8.x-4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-4.0-beta3.zip",
-                "reference": "8.x-4.0-beta3",
-                "shasum": "a0da6dc169a0315bf29a8dd0ee2146d18215a56b"
+                "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-4.0.zip",
+                "reference": "8.x-4.0",
+                "shasum": "63dad289defe8298aa5ca5e30062fe9761d19eca"
             },
             "require": {
                 "drupal/core": "^8.3"
@@ -2816,11 +2816,11 @@
                     "dev-4.x": "4.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-4.0-beta3",
-                    "datestamp": "1519400592",
+                    "version": "8.x-4.0",
+                    "datestamp": "1536264180",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -2875,7 +2875,7 @@
                 },
                 "drupal": {
                     "version": "8.x-4.0-beta3",
-                    "datestamp": "1519400285",
+                    "datestamp": "1531143824",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -3109,7 +3109,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0-alpha12",
-                    "datestamp": "1527867484",
+                    "datestamp": "1531121921",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -9920,7 +9920,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "drupal/migrate_plus": 10,
         "drupal/migrate_tools": 10,
         "drupal/s3fs": 15,
         "behat/mink": 20,
