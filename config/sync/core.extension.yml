@@ -6,9 +6,6 @@ module:
   dblog: 0
   elabee: 0
   fontawesome: 0
-  migrate: 0
-  migrate_plus: 0
-  migrate_tools: 0
   monolog: 0
   redis: 0
   s3fs: 0

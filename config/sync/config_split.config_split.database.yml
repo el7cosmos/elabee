@@ -4,9 +4,9 @@ status: true
 dependencies: {  }
 id: database
 label: Database
+description: ''
 folder: ''
-module:
-  migrate_facebook_destination: 0
+module: {  }
 theme: {  }
 blacklist:
   - vibe.settings
