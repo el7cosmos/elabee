@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/el7cosmos/elabee.svg?branch=master)](https://travis-ci.org/el7cosmos/elabee)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=el7cosmos/elabee)](https://dependabot.com)
 [![Dependency Status](https://gemnasium.com/badges/github.com/el7cosmos/elabee.svg)](https://gemnasium.com/github.com/el7cosmos/elabee)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/705de4034ccdd28dcd39/maintainability)](https://codeclimate.com/github/el7cosmos/elabee/maintainability)
