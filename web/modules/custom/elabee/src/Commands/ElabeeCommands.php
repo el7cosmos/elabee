@@ -19,6 +19,8 @@ use Drush\Commands\DrushCommands;
  */
 class ElabeeCommands extends DrushCommands {
 
+  private const SITE_ALIAS = '@self';
+
   /**
    * @var \Drupal\s3fs\S3fsServiceInterface
    */
@@ -40,14 +42,12 @@ class ElabeeCommands extends DrushCommands {
    * Heroku release.
    *
    * @command heroku:release
-   *
-   * @throws \Exception
    */
   public function release(): void {
-    drush_invoke_process('@self', 'cache:rebuild');
-    drush_invoke_process('@self', 'updatedb');
-    drush_invoke_process('@self', 'entity:updates');
-    drush_invoke_process('@self', 'config-split:import');
+    drush_invoke_process(self::SITE_ALIAS, 'cache:rebuild');
+    drush_invoke_process(self::SITE_ALIAS, 'updatedb');
+    drush_invoke_process(self::SITE_ALIAS, 'entity:updates');
+    drush_invoke_process(self::SITE_ALIAS, 'config:import');
 
     if ($this->s3fs->validate($this->settings)) {
       $this->s3fs->refreshCache($this->settings);

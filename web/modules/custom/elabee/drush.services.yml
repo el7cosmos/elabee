@@ -1,6 +1,6 @@
 services:
   elabee.commands:
-    class: \Drupal\elabee\Commands\ElabeeCommands
-    arguments: ['@config.factory', '@s3fs']
+    class: Drupal\elabee\Commands\ElabeeCommands
+    autowire: true
     tags:
       - { name: drush.command }
