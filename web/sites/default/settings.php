@@ -58,6 +58,9 @@
  * implementations with custom ones.
  */
 
+define('SETTINGS_REDIS_CONNECTION', 'redis.connection');
+define('SETTINGS_S3FS', 's3fs.settings');
+
 /**
  * Database settings:
  *
@@ -842,12 +845,12 @@ $settings['php_storage']['twig']['directory'] = '../storage/php';
 $settings['s3fs.use_s3_for_public'] = (bool) getenv('S3_PUBLIC');
 $settings['s3fs.access_key'] = getenv('AWS_ACCESS_KEY_ID');
 $settings['s3fs.secret_key'] = getenv('AWS_SECRET_ACCESS_KEY');
-$config['s3fs.settings']['access_key'] = getenv('AWS_ACCESS_KEY_ID');
-$config['s3fs.settings']['secret_key'] = getenv('AWS_SECRET_ACCESS_KEY');
-$config['s3fs.settings']['bucket'] = getenv('S3_BUCKET');
-$config['s3fs.settings']['domain'] = getenv('S3_DOMAIN');
-$config['s3fs.settings']['hostname'] = getenv('S3_HOSTNAME');
-$config['s3fs.settings']['region'] = 'sgp1';
+$config[SETTINGS_S3FS]['access_key'] = getenv('AWS_ACCESS_KEY_ID');
+$config[SETTINGS_S3FS]['secret_key'] = getenv('AWS_SECRET_ACCESS_KEY');
+$config[SETTINGS_S3FS]['bucket'] = getenv('S3_BUCKET');
+$config[SETTINGS_S3FS]['domain'] = getenv('S3_DOMAIN');
+$config[SETTINGS_S3FS]['hostname'] = getenv('S3_HOSTNAME');
+$config[SETTINGS_S3FS]['region'] = 'sgp1';
 
 /**
  * Redis
@@ -858,18 +861,18 @@ if ($redis_url = getenv('REDIS_URL')) {
   $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/redis.services.yml';
   $settings['cache']['default'] = 'cache.backend.redis';
 
-  $settings['redis.connection']['interface'] = 'PhpRedis';
+  $settings[SETTINGS_REDIS_CONNECTION]['interface'] = 'PhpRedis';
   if (!empty($redis_connection['host'])) {
-    $settings['redis.connection']['host'] = $redis_connection['host'];
+    $settings[SETTINGS_REDIS_CONNECTION]['host'] = $redis_connection['host'];
   }
   if (!empty($redis_connection['port'])) {
-    $settings['redis.connection']['port'] = $redis_connection['port'];
+    $settings[SETTINGS_REDIS_CONNECTION]['port'] = $redis_connection['port'];
   }
   if (!empty($redis_connection['pass'])) {
-    $settings['redis.connection']['password'] = $redis_connection['pass'];
+    $settings[SETTINGS_REDIS_CONNECTION]['password'] = $redis_connection['pass'];
   }
   if (!empty(getenv('REDIS_BASE'))) {
-    $settings['redis.connection']['base'] = getenv('REDIS_BASE');
+    $settings[SETTINGS_REDIS_CONNECTION]['base'] = getenv('REDIS_BASE');
   }
 
   $settings['cache_prefix'] = 'elabee';
