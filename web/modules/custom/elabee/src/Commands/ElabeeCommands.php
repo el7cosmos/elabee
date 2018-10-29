@@ -44,11 +44,6 @@ class ElabeeCommands extends DrushCommands {
    * @command heroku:release
    */
   public function release(): void {
-    drush_invoke_process(self::SITE_ALIAS, 'cache:rebuild');
-    drush_invoke_process(self::SITE_ALIAS, 'updatedb');
-    drush_invoke_process(self::SITE_ALIAS, 'entity:updates');
-    drush_invoke_process(self::SITE_ALIAS, 'config:import');
-
     if ($this->s3fs->validate($this->settings)) {
       $this->s3fs->refreshCache($this->settings);
     }
