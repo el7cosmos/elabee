@@ -19,8 +19,6 @@ use Drush\Commands\DrushCommands;
  */
 class ElabeeCommands extends DrushCommands {
 
-  private const SITE_ALIAS = '@self';
-
   /**
    * @var \Drupal\s3fs\S3fsServiceInterface
    */
