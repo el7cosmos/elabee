@@ -57,7 +57,7 @@
         "drupal/fontawesome": "^2.4",
         "drupal/fortytwo_admin": "^1.17",
         "drupal/fortytwo_admin_toolbar": "^1.6",
-        "drupal/migrate_plus": "^4.0@beta",
+        "drupal/migrate_plus": "^5.0@beta",
         "drupal/migrate_tools": "^4.0@beta",
         "drupal/minifyhtml": "^1.2",
         "drupal/monolog": "^1.0",
